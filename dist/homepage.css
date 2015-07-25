@@ -301,9 +301,18 @@ body {
 .header-section .logo {
   color: white;
   font-weight: bold;
-  padding: 10px;
+  padding: 5px;
+  padding-left: 0px;
+  padding-top: 2px;
   background: #3da9f7;
   font-size: 20px;
+}
+.header-section .logo .arrow {
+  font-size: 40px;
+  font-family: sans-serif;
+  position: relative;
+  left: 5px;
+  bottom: 1px;
 }
 .header-section .searcharea {
   background: white;
