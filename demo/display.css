@@ -1,0 +1,24 @@
+body{
+	padding: 100px 200px;
+}
+
+.display {
+	padding: 5px 10px;
+}
+
+.display.row [class*="column"], .display .cell{
+	height: 50px;
+	background: #f2f2f2;
+	border: solid 1px #eee;
+	text-align: center;
+	line-height: 50px;
+}
+
+[class*="block-grid"] li{
+	height: 50px;
+	background: #f2f2f2;
+	border: solid 1px #eee;
+}
+
+
+
