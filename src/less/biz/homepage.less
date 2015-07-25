@@ -21,6 +21,31 @@ body {
 	margin: auto;
 }
 
+@brand-color: #3da9f7;
+.header-section	{
+	margin-bottom: 10px;
+	.logo {
+		color: white;
+		font-weight: bold;
+		padding: 10px;
+		background: @brand-color;
+		font-size: 20px;
+	}
+	.searcharea {
+		background: white;
+		font-size: 15px;
+		input {
+			width: 100%;
+			border: none;
+			font-size: 15px;
+			height: 40px;
+			padding-left: 10px;
+			outline: none; 
+		}
+	}
+}
+
+
 .brand-section {
 	> .muicell{
 		height: 280px;
@@ -54,7 +79,6 @@ body {
 		padding: 0 14px;
 		transition: all 0.4s ease;
 		&.active {
-			background: blue;
 			background: #3da9f7;
 			color: #ffffff;
 			position: relative;
