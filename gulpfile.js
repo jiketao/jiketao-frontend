@@ -97,7 +97,6 @@ gulp.task("test", function() {
   console.log("should run test!..")
 })
 
-// watch = require("gulp-watch")
 gulp.task("watch", function() {
   livereload.listen()
   gulp.watch(src.html, ["html"])
