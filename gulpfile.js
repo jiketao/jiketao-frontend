@@ -8,6 +8,10 @@ var livereload = require('gulp-livereload')
 var connect = require('gulp-connect')
 var babelify = require("babelify")
 
+var uglify = require('gulp-uglify')
+var minifyHTML = require('gulp-minify-html')
+var uglifycss = require ('gulp-uglifycss')
+
 var src = {
   root: "src",
   // 样式和逻辑都只编译入口文件
@@ -89,6 +93,7 @@ gulp.task("connect", function() {
 })
 
 gulp.task("test", function() {
+  // TODO
   console.log("should run test!..")
 })
 
@@ -100,3 +105,36 @@ gulp.task("watch", function() {
   gulp.watch("src/scripts/**/*", ["scripts", "test"])
 })
 
+/**
+ * Build for distribution.
+ */ 
+gulp.task("build", function() {
+  del.sync("build")
+
+  // Assets
+  gulp.src(["lib/**/*"])
+    .pipe(gulp.dest(dist.root + "/lib"))
+  gulp.src(["assets/**/*"])
+    .pipe(gulp.dest(dist.root + "/assets"))
+
+
+  // HTML
+  gulp.src(src.html)
+    .pipe(minifyHTML())
+    .pipe(gulp.dest(dist.html))
+    
+  // Build styles
+  gulp.src(src.styles)
+    .pipe(less())
+    .pipe(uglifycss())
+    .pipe(gulp.dest(dist.styles))
+
+  // Build scripts
+  gulp.src(src.scripts)
+    .pipe(browserify({
+      debug: true,
+      transform: ["babelify"]
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest(dist.scripts))
+})
