@@ -2,15 +2,15 @@
 jiketao frontend 
 
 
-## demo  目录
+##  前端架构 
 
-html 交互稿
+1. 样式： purecss 
+2. js： React + npm-modules （es6 optional）
+3. 打包：gulp + browserify
+4. 图片资源： 七牛 作为 CDN 
 
-1. 首页 （√）
+前后端隔离开来开发，对于数据交互相关的
 
-## todo 
+1. 前端后端约定数据，前端先 mock ， 后端接口好了直接适配（react 模式）
 
-- 搜索list页面 （）
-- 商品页面 （）
-- 文章页面  ()
-- 
+
