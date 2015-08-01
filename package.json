@@ -14,14 +14,21 @@
     "url": "https://github.com/6174/Timothy.git"
   },
   "devDependencies": {
+    "del": "^1.2.0",
     "gulp": "latest",
     "gulp-autoprefixer": "0.0.10",
+    "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.3.4",
+    "gulp-connect": "^2.2.0",
     "gulp-cssmin": "^0.1.6",
     "gulp-ejs": "latest",
     "gulp-less": "latest",
-    "gulp-rename": "^1.2.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-minify-html": "^1.0.4",
     "gulp-myth": "*",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglifycss": "^1.0.4",
+    "gulp-util": "^3.0.6",
     "gulp-watch": "latest"
   },
   "author": "6174",
