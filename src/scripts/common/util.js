@@ -1,4 +1,3 @@
-
-exports.log = function(info) {
+export function log(info) {
   console.log(info)
 }

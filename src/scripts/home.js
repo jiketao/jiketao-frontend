@@ -1,3 +1,8 @@
-util = require("./common/util.js")
+import {log} from "./common/util"
+import * as React from "react"
+import {Product} from "./components/product"
 
-util.log("JiKe")
+React.render(
+  <Product name="John" picture="assets/chair.jpg" />, 
+  document.getElementById("content")
+);

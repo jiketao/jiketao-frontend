@@ -6,6 +6,7 @@ var del = require("del")
 var browserify = require('gulp-browserify')
 var livereload = require('gulp-livereload')
 var connect = require('gulp-connect')
+var babelify = require("babelify")
 
 var src = {
   root: "src",
@@ -75,7 +76,8 @@ gulp.task("styles", function() {
 gulp.task("scripts", function() {
   gulp.src(src.scripts, {})
     .pipe(browserify({
-      debug: true
+      debug: true,
+      transform: ["babelify"]
     }))
     .on("error", logError)
     .pipe(gulp.dest(bin.scripts))
@@ -94,7 +96,7 @@ gulp.task("test", function() {
 gulp.task("watch", function() {
   livereload.listen()
   gulp.watch(src.html, ["html"])
-  gulp.watch(src.styles, ["styles"])
-  gulp.watch(src.scripts, ["scripts", "test"])
+  gulp.watch("src/styles/**/*", ["styles"])
+  gulp.watch("src/scripts/**/*", ["scripts", "test"])
 })
 
