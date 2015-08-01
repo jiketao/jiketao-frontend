@@ -4,7 +4,7 @@ jiketao frontend
 
 ##  前端架构 
 
-1. 样式： purecss 
+1. 样式： purecss + less 
 2. js： React + npm-modules （es6 optional）
 3. 打包：gulp + browserify
 4. 图片资源： 七牛 作为 CDN 
