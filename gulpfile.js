@@ -116,7 +116,6 @@ gulp.task("build", function() {
   gulp.src(["assets/**/*"])
     .pipe(gulp.dest(dist.root + "/assets"))
 
-
   // HTML
   gulp.src(src.html)
     .pipe(minifyHTML())
