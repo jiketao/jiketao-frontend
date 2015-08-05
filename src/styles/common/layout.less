@@ -1,0 +1,41 @@
+@import "./mixins.less";
+
+ul li {
+  list-style: none;
+}
+
+ul.menus {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  height: 40px;
+  li.menu-item {
+    width: 60px;
+    float: left;
+  }
+  margin-bottom: 10px;
+}
+
+@min-height: 700px;
+
+div.content {
+  overflow: hidden;
+  width: 80%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+div.content-left {
+  //.hero();
+  .border();
+  width: 69%;
+  min-height: @min-height;
+  float: left;
+}
+
+div.content-right {
+  .border();
+  width: 30%;
+  min-height: @min-height;
+  float: right;
+}
