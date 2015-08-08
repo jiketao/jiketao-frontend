@@ -4,7 +4,8 @@ import ProductList from "./components/product-list"
 import Menu from "./components/menu"
 import products from "../../test/fixtures/products.json"
 
-var menus = [
+let menus = [
+  {name: "所有", url: "/"},
   {name: "电脑", url: "/"},
   {name: "键盘", url: "/"},
   {name: "办公椅", url: "/"},
@@ -12,12 +13,12 @@ var menus = [
   {name: "背包", url: "/"},
 ]
 
-console.log(products)
+let activeIndex = 0
 
 React.render(
   <div>
     <div className="menu">
-    <Menu menus={menus}/>
+    <Menu menus={menus} activeIndex={activeIndex}/>
     </div>
     <div className="content">
       <div className="content-left">

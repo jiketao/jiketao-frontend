@@ -7,11 +7,16 @@ class Menu extends React.Component {
   render() {
     return (
       <ul className="menus">
-      <li className="menu-item logo">极客淘</li>{
-      this.props.menus.map(function(item) {
+      <li className="logo">
+        <h1><a href="/">极客淘</a></h1>
+      </li>{
+      this.props.menus.map((item, index)=> {
         return (
           <li className="menu-item">
-            <a href={item.url}>{item.name}</a>
+            <a className={index === this.props.activeIndex ? "active" : ""}
+               href={item.url}>
+              {item.name}
+            </a>
           </li>
         )
       })

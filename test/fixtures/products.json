@@ -3,15 +3,41 @@
     "_id": 0,
     "title": "My Product",
     "picUrl": "assets/chair.jpg",
-    "content": {brief: "This is a very good chair. I strongly recommend it!"},
+    "content": {"brief": "This is a very good chair. I strongly recommend it!"},
     "date": "2015-07-28",
     "upvote": 666
   },
   {
-    "_id": 1,
+    "_id": 2,
     "title": "My Product",
     "picUrl": "assets/chair.jpg",
-    "content": {brief: "This is a very good chair, too. I strongly recommend it!"},
+    "content": {"brief": "This is a very good chair. I strongly recommend it!"},
+    "date": "2015-07-28",
+    "upvote": 666
+  },
+  {
+    "_id": 3,
+    "title": "My Product",
+    "picUrl": "assets/chair.jpg",
+    "content": {"brief": "This is a very good chair. I strongly recommend it!"},
+    "date": "2015-07-28",
+    "upvote": 666
+  },
+  {
+    "_id": 4,
+    "title": "My Product",
+    "picUrl": "assets/chair.jpg",
+    "content": {"brief": "This is a very good chair. I strongly recommend it!"},
+    "date": "2015-07-28",
+    "upvote": 666
+  },
+  {
+    "_id": 5,
+    "title": "My Product",
+    "picUrl": "assets/chair.jpg",
+    "content": {
+      "brief": "This is a very good chair, too. I strongly recommend it! But I have no idea where to by this product. I apologize!"
+    },
     "date": "2015-07-28",
     "upvote": 666
   }

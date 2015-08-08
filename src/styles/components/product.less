@@ -2,20 +2,26 @@
 
 div.product {
   .hero();
+  .border();
+
   @height: 130px;
   @padding: 10px;
+
   width: 100%;
   overflow: hidden;
   height: @height;
   padding: @padding;
-  margin-bottom: 15px;
-  .border();
+  margin-bottom: 10px;
+
   div.item-left {
     height: 100%;
     float: left;
     width: 75%;
     h3.item-title {
       margin-bottom: 5px;
+      &:hover {
+        color: #000;
+      }
     }
     p.item-content {
       height: @height / 2;
