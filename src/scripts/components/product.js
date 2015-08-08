@@ -8,16 +8,16 @@ class Product extends React.Component {
       <div className="product">
           <div className="item-left">
 
-            <div className="item-name">{this.props.product.title}</div>
-            <div className="item-content">{this.props.product.content.brief}</div>
+            <h3 className="item-title">{this.props.product.title}</h3>
+            <p className="item-content">{this.props.product.content.brief}</p>
 
             <div className="item-info">
-              <div className="item-publish-date">
-                {this.props.product.date}
-              </div>
-              <div className="item-publish-date">
-                {this.props.product.upvote}
-              </div>
+              <span className="item-publish-date">
+                {this.props.product.date} 发布
+              </span>
+              <span className="item-publish-upvote">
+                （{this.props.product.upvote} 人觉得很赞）
+              </span>
             </div>
           </div>
           <div className="item-right">

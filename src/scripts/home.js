@@ -1,7 +1,8 @@
 import {log} from "./common/util"
 import React from "react"
-import Product from "./components/product"
+import ProductList from "./components/product-list"
 import Menu from "./components/menu"
+import products from "../../test/fixtures/products.json"
 
 var menus = [
   {name: "电脑", url: "/"},
@@ -11,6 +12,8 @@ var menus = [
   {name: "背包", url: "/"},
 ]
 
+console.log(products)
+
 React.render(
   <div>
     <div className="menu">
@@ -18,6 +21,7 @@ React.render(
     </div>
     <div className="content">
       <div className="content-left">
+        <ProductList products={products}/>
       </div>
       <div className="content-right">
       </div>

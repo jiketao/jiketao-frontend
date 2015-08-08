@@ -1,0 +1,18 @@
+[
+  {
+    "_id": 0,
+    "title": "My Product",
+    "picUrl": "assets/chair.jpg",
+    "content": {brief: "This is a very good chair. I strongly recommend it!"},
+    "date": "2015-07-28",
+    "upvote": 666
+  },
+  {
+    "_id": 1,
+    "title": "My Product",
+    "picUrl": "assets/chair.jpg",
+    "content": {brief: "This is a very good chair, too. I strongly recommend it!"},
+    "date": "2015-07-28",
+    "upvote": 666
+  }
+]
