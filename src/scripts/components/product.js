@@ -9,7 +9,7 @@ class Product extends React.Component {
           <div className="item-left">
 
             <h3 className="item-title">
-              <a href="/product-detail">
+              <a href="/product-detail.html">
               {this.props.product.title}
               </a>
             </h3>
