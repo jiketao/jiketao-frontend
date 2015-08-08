@@ -11,6 +11,7 @@ let menus = [
   {name: "办公椅", url: "/"},
   {name: "软件", url: "/"},
   {name: "背包", url: "/"},
+  {name: "鸡鸡", url: "/"}
 ]
 
 let activeIndex = 0

@@ -9,3 +9,15 @@
 .border-bottom() {
   border-bottom: 1px solid #ccc;
 }
+
+.content-padding() {
+  padding: 10px 15px;
+}
+
+.animation(@type: all; @duration: .15s; @ease: ease;) {
+  transition: @type @duration @ease;
+  -webkit-transition: @type @duration @ease;
+  -moz-transition: @type @duration @ease;
+  -ms-transition: @type @duration @ease;
+  -o-transition: @type @duration @ease;
+}
