@@ -40,6 +40,7 @@
   },
   "homepage": "https://github.com/6174/Timothy",
   "dependencies": {
+    "lodash": "^3.10.1",
     "react": "^0.13.3"
   }
 }

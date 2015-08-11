@@ -1,0 +1,11 @@
+[
+  {
+    "_id": 0,
+    "date": "2015-07-07",
+    "content": "只有这么长的评论才是真爱啊！",
+    "user": {
+      "name": "杰瑞",
+      "avatar": "assets/jerry.gif"
+    }
+  }
+]
