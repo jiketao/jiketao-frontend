@@ -5,7 +5,7 @@
     "picUrl": "assets/chair.jpg",
     "content": {
       "brief": "This is a very good chair. I strongly recommend it!",
-      "extended": "<h1>Harry Potter!</h1> <p>Hello world</p>"
+      "extended": "<h1>Harry Potter!</h1> <p>Hello world This is a very good chair. I strongly recommend it! <img src='assets/chair.jpg'></p>"
     },
     "date": "2015-07-28",
     "upvote": 666,

@@ -1,3 +1,5 @@
+@import "./mixins.less";
+
 * {
   margin: 0;
   padding: 0;
@@ -18,4 +20,20 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-size: 13px;
 	color: #666;
+}
+
+textarea {
+  font-size: 14px;
+  width: 100%;
+  height: 80px;
+  padding: 8px 10px;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  resize: none;
+}
+
+.button {
+  .button();
+  .animation(@duration: .1s;);
 }
