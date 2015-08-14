@@ -2,6 +2,9 @@ import {log} from "./common/util"
 import React from "react"
 import ProductList from "./components/product-list"
 import Menu from "./components/menu"
+import RecommendationSlider from "./components/recommendation-slider"
+import HotTopicSlide from "./components/hot-topic-slide"
+
 import products from "../../test/fixtures/products.json"
 
 let menus = [
@@ -26,6 +29,8 @@ React.render(
         <ProductList products={products}/>
       </div>
       <div className="content-right">
+        <RecommendationSlider />
+        <HotTopicSlide />
       </div>
     </div>
   </div>,

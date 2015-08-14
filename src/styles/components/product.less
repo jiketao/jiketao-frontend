@@ -1,4 +1,5 @@
 @import "../common/mixins.less";
+@import "../common/vars.less";
 
 div.product {
   .hero();
@@ -11,7 +12,7 @@ div.product {
   overflow: hidden;
   height: @height;
   padding: @padding 15px;
-  margin-bottom: 5px;
+  margin-bottom: @unit-gap;
 
   div.item-left {
     height: 100%;

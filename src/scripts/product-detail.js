@@ -3,6 +3,8 @@ import React from "react"
 import Menu from "./components/menu"
 import Post from "./components/post"
 import CommentBox from "./components/comment-box"
+import RecommendationSlider from "./components/recommendation-slider"
+import HotTopicSlide from "./components/hot-topic-slide"
 import _ from "lodash"
 
 // To delete
@@ -37,6 +39,8 @@ React.render(
         <CommentBox comments={comments}/>
       </div>
       <div className="content-right">
+        <RecommendationSlider />
+        <HotTopicSlide />
       </div>
     </div>
   </div>,
