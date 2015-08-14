@@ -42,10 +42,10 @@ function logError(err) {
  * Default Gulp Task.
  */
 gulp.task("default", [
-  "clean", 
+  "clean",
   "copy",
   "html",
-  "styles", 
+  "styles",
   "scripts",
   "connect",
   "test",
@@ -101,12 +101,13 @@ gulp.task("watch", function() {
   livereload.listen()
   gulp.watch(src.html, ["html"])
   gulp.watch("src/styles/**/*", ["styles"])
+  gulp.watch("src/test/**/*", ["scripts", "test"])
   gulp.watch("src/scripts/**/*", ["scripts", "test"])
 })
 
 /**
  * Build for distribution.
- */ 
+ */
 gulp.task("build", function() {
   del.sync("build")
 
@@ -120,7 +121,7 @@ gulp.task("build", function() {
   gulp.src(src.html)
     .pipe(minifyHTML())
     .pipe(gulp.dest(dist.html))
-    
+
   // Build styles
   gulp.src(src.styles)
     .pipe(less())

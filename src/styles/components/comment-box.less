@@ -49,6 +49,17 @@ div.comment-box {
       }
       p.comment-content {
         padding: 6px 0;
+        .content-color();
+      }
+      div.comment-tools {
+        span.comment-tool-unit {
+          .hover();
+          &:hover {
+            color: #000;
+          }
+          display: inline-block;
+          float: right;
+        }
       }
     }
   }

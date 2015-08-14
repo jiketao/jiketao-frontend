@@ -7,7 +7,9 @@ class Comment extends React.Component {
   render() {
     return (
       <div className="comment">
-        <img className="avatar" src={this.props.comment.user.avatar}/>
+        <a href={"/users/" + this.props.comment.user._id}>
+          <img className="avatar" src={this.props.comment.user.avatar}/>
+        </a>
         <div className="comment-right">
           <div className="comment-info">
             <span className="comment-username">
@@ -20,6 +22,11 @@ class Comment extends React.Component {
           <p className="comment-content">
             {this.props.comment.content}
           </p>
+          <div className="comment-tools">
+            <span className="comment-tool-unit comment-reply-count">
+              <a hrf="#">回复（10）</a>
+            </span>
+          </div>
         </div>
       </div>
     )
