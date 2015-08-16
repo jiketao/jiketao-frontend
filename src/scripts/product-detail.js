@@ -5,6 +5,8 @@ import Post from "./components/post"
 import CommentBox from "./components/comment-box"
 import RecommendationSlider from "./components/recommendation-slider"
 import HotTopicSlide from "./components/hot-topic-slide"
+import Search from "./components/search"
+import Avatar from "./components/avatar"
 import _ from "lodash"
 
 // To delete
@@ -28,11 +30,20 @@ function mock() {
   }
 }
 
+let currentUser = {
+  _id: 43123,
+  name: "jery",
+  avatar: "assets/jerry.gif"
+}
+
 React.render(
   <div>
     <div className="nav-bar">
       <Menu menus={menus} activeIndex={activeIndex}/>
-      <div className="align-content"> </div>
+      <div className="align-content">
+        <Avatar size={32} user={currentUser} />
+        <Search />
+      </div>
     </div>
     <div className="content">
       <div className="content-left">

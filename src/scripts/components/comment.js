@@ -1,4 +1,5 @@
 import React from "react"
+import Avatar from "./avatar"
 
 class Comment extends React.Component {
   constructor() {
@@ -7,9 +8,7 @@ class Comment extends React.Component {
   render() {
     return (
       <div className="comment">
-        <a href={"/users/" + this.props.comment.user._id}>
-          <img className="avatar" src={this.props.comment.user.avatar}/>
-        </a>
+        <Avatar user={this.props.comment.user}/>
         <div className="comment-right">
           <div className="comment-info">
             <span className="comment-username">

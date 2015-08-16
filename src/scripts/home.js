@@ -3,6 +3,7 @@ import React from "react"
 import ProductList from "./components/product-list"
 import Menu from "./components/menu"
 import Search from "./components/search"
+import Avatar from "./components/avatar"
 import RecommendationSlider from "./components/recommendation-slider"
 import HotTopicSlide from "./components/hot-topic-slide"
 
@@ -18,6 +19,11 @@ let menus = [
   {name: "鸡鸡", url: "/"}
 ]
 
+let currentUser = {
+  name: "jery",
+  avatar: "assets/jerry.gif"
+}
+
 let activeIndex = 0
 
 React.render(
@@ -25,6 +31,7 @@ React.render(
     <div className="nav-bar">
     <Menu menus={menus} activeIndex={activeIndex}/>
     <div className="align-content">
+      <Avatar size={32} user={currentUser} />
       <Search />
     </div>
     </div>
