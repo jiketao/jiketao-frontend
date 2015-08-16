@@ -2,6 +2,7 @@ import {log} from "./common/util"
 import React from "react"
 import ProductList from "./components/product-list"
 import Menu from "./components/menu"
+import Search from "./components/search"
 import RecommendationSlider from "./components/recommendation-slider"
 import HotTopicSlide from "./components/hot-topic-slide"
 
@@ -21,8 +22,11 @@ let activeIndex = 0
 
 React.render(
   <div>
-    <div className="menu">
+    <div className="nav-bar">
     <Menu menus={menus} activeIndex={activeIndex}/>
+    <div className="align-content">
+      <Search />
+    </div>
     </div>
     <div className="content">
       <div className="content-left">

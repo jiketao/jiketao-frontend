@@ -30,8 +30,9 @@ function mock() {
 
 React.render(
   <div>
-    <div className="menu">
+    <div className="nav-bar">
       <Menu menus={menus} activeIndex={activeIndex}/>
+      <div className="align-content"> </div>
     </div>
     <div className="content">
       <div className="content-left">

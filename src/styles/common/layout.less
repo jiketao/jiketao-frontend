@@ -1,6 +1,11 @@
 @import "./mixins.less";
 @import "./vars.less";
 
+.content() {
+  width: 80%;
+  max-width: 960px;
+}
+
 ul li {
   list-style: none;
 }
@@ -9,10 +14,9 @@ ul.menus {
   width: 100%;
   overflow: hidden;
   background: #fff;
-  @height: 50px;
-  height: @height;
+  height: @menus-height;
   li.menu-item {
-    line-height: @height;
+    line-height: @menus-height;
     width: 60px;
     float: left;
     text-align: center;
@@ -40,7 +44,7 @@ ul.menus {
     color: #fff;
     height: 100%;
     text-align: center;
-    line-height: @height;
+    line-height: @menus-height;
     //margin-right: 5px;
     a {
       display: inline-block;
@@ -48,16 +52,31 @@ ul.menus {
       width: 100%;
     }
   }
-  margin-bottom: 10px;
   .border-bottom();
 }
 
-@min-height: 700px;
+div.nav-bar {
+  position: relative;
+  height: @menus-height;
+  margin-bottom: 10px;
+  div.align-content {
+    height: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    .content();
+    //height: 100%;
+  }
+}
 
+//============== Posts content =============
+
+@min-height: 700px;
 div.content {
+  .content();
   overflow: hidden;
-  width: 80%;
-  max-width: 960px;
   margin: 0 auto;
 }
 
