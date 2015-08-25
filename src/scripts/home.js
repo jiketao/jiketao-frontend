@@ -7,6 +7,7 @@ import Avatar from "./components/avatar"
 import RecommendationSlider from "./components/recommendation-slider"
 import HotTopicSlide from "./components/hot-topic-slide"
 import Sku from "./components/sku"
+import CateBar from "./components/categories-bar"
 
 import products from "../../test/fixtures/products.json"
 
@@ -27,17 +28,25 @@ let currentUser = {
 
 let activeIndex = 0
 
+function onCateChange(cate) {
+  console.log(cate)
+}
+
 React.render(
   <div>
     <div className="nav-bar">
-    <Menu menus={menus} activeIndex={activeIndex}/>
-    <div className="align-content">
-      <Avatar size={32} user={currentUser} />
-      <Search />
+      <Menu menus={menus} activeIndex={activeIndex}/>
+      <div className="align-content">
+        <Avatar size={32} user={currentUser} />
+        <Search />
+      </div>
     </div>
-    </div>
+
     <div className="content">
       <Sku/>
+      <CateBar categories={menus}
+        activeCateIndex={activeIndex}
+        onCateChange={onCateChange}/>
       <div className="content-left">
         <ProductList products={products}/>
       </div>
