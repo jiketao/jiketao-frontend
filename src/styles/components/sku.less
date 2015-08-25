@@ -1,0 +1,38 @@
+@import "../common/vars.less";
+@import "../common/mixins.less";
+
+div.sku {
+  width: 100%;
+  margin-bottom: @unit-gap;
+  // .hero();
+  // .border();
+  div.sku-left {
+    .hero();
+    .border();
+
+    float: left;
+    height: 100%;
+  }
+  div.sku-right {
+    div.sku-right-up {
+      .hero();
+      .border();
+    }
+    div.sku-right-bottom {
+      div.sku-right-bottom-left {
+        .hero();
+        .border();
+        float: left;
+        height: 100%;
+      }
+      div.sku-right-bottom-right {
+        .hero();
+        .border();
+        float: left;
+        height: 100%;
+      }
+    }
+    float: left;
+    height: 100%;
+  }
+}

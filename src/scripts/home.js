@@ -6,6 +6,7 @@ import Search from "./components/search"
 import Avatar from "./components/avatar"
 import RecommendationSlider from "./components/recommendation-slider"
 import HotTopicSlide from "./components/hot-topic-slide"
+import Sku from "./components/sku"
 
 import products from "../../test/fixtures/products.json"
 
@@ -36,6 +37,7 @@ React.render(
     </div>
     </div>
     <div className="content">
+      <Sku/>
       <div className="content-left">
         <ProductList products={products}/>
       </div>
