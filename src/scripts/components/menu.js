@@ -12,7 +12,7 @@ class Menu extends React.Component {
       </li>{
       this.props.menus.map((item, index)=> {
         return (
-          <li className="menu-item">
+          <li className="menu-item" key={index}>
             <a className={index === this.props.activeIndex ? "active" : ""}
                href={item.url}>
               {item.name}

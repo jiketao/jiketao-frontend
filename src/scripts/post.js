@@ -10,14 +10,14 @@ import Avatar from "./components/avatar"
 import _ from "lodash"
 
 // To delete
-import products from "../../test/fixtures/products.json"
+import productsMock from "../../test/fixtures/products"
 import menus from "../../test/fixtures/menus.json"
 import comments from "../../test/fixtures/comments.json"
 
 mock()
 
 let activeIndex = -1
-let product = products[0]
+let product = productsMock(20)[0]
 
 function mock() {
   let i = 0

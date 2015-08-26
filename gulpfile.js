@@ -101,7 +101,7 @@ gulp.task("watch", function() {
   livereload.listen()
   gulp.watch(src.html, ["html"])
   gulp.watch("src/styles/**/*", ["styles"])
-  gulp.watch("src/test/**/*", ["scripts", "test"])
+  gulp.watch("test/**/*", ["scripts", "test"])
   gulp.watch("src/scripts/**/*", ["scripts", "test"])
 })
 

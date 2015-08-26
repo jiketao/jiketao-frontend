@@ -3,23 +3,21 @@ import React from "react"
 class CateBar extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {activeCateIndex: this.props.activeCateIndex || 0}
   }
   onActivate(i, item) {
-    this.setState({
-      activeCateIndex: i
-    })
     if (this.props.onCateChange) {
       this.props.onCateChange(item)
     }
   }
   getCateItems() {
     return this.props.categories.map((item, i) => {
-      let className = (i === this.state.activeCateIndex)
+      let className = (item._id === this.props.activeCateId)
         ? "category-item active"
         : "category-item"
       return (
-        <li className={className} onClick={this.onActivate.bind(this, i, item)}>
+        <li className={className}
+            key={item._id}
+            onClick={this.onActivate.bind(this, i, item)}>
             {item.name}
         </li>
       )

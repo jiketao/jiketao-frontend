@@ -9,52 +9,99 @@ import HotTopicSlide from "./components/hot-topic-slide"
 import Sku from "./components/sku"
 import CateBar from "./components/categories-bar"
 
-import products from "../../test/fixtures/products.json"
+import productsMock from "../../test/fixtures/products"
 
-let menus = [
-  {name: "所有", url: "/"},
-  {name: "电脑", url: "/"},
-  {name: "键盘", url: "/"},
-  {name: "办公椅", url: "/"},
-  {name: "软件", url: "/"},
-  {name: "背包", url: "/"},
-  {name: "鸡鸡", url: "/"}
+let menus = window.menus || [
+  {name: "首页", url: "/"},
+  {name: "关于", url: "/about"},
+  {name: "...", url: "/"}
 ]
+let activeMenuIndex = 0
 
-let currentUser = {
-  name: "jery",
-  avatar: "assets/jerry.gif"
+/*
+ * 商品数据，后端吐出
+ */
+let productCategories = window.productCategories || [
+  {name: "所有", _id: 0},
+  {name: "电脑", _id: 1},
+  {name: "键盘", _id: 2 },
+  {name: "办公椅", _id: 3},
+  {name: "软件", _id: 4},
+  {name: "背包", _id: 5},
+  {name: "鸡鸡", _id: 6}
+]
+let activeProductCategoryId = window.activeProductCategoryId || 0
+let products = window.products || productsMock(20)
+
+/*
+ * 文章数据，后端吐出
+ */
+let postCategories = window.postCategories || [
+  {name: "所有", _id: 0},
+  {name: "电脑", _id: 1},
+  {name: "键盘", _id: 2 },
+  {name: "办公椅", _id: 3},
+  {name: "软件", _id: 4},
+  {name: "背包", _id: 5},
+  {name: "鸡鸡", _id: 6}
+]
+let activePostCategoryId = window.activePostCategoryId || 0
+let posts = window.posts || []
+
+// let currentUser = {
+//   name: "jery",
+//   avatar: "assets/jerry.gif"
+// }
+// <Avatar size={32} user={currentUser} />
+
+class Home extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      menus,
+      activeMenuIndex,
+
+      productCategories,
+      products,
+      activeProductCategoryId,
+
+      postCategories,
+      posts,
+      activePostCategoryId
+    }
+  }
+  onCateChange(cate) {
+    this.setState({
+      activeProductCategoryId: cate._id
+    })
+  }
+  render() {
+    return (
+      <div>
+        <div className="nav-bar">
+          <Menu menus={this.state.menus}
+                activeIndex={this.state.activeMenuIndex}/>
+          <div className="align-content">
+            <Search />
+          </div>
+        </div>
+
+        <div className="content">
+          <Sku/>
+          <CateBar categories={this.state.productCategories}
+            activeCateId={this.state.activeProductCategoryId}
+            onCateChange={this.onCateChange.bind(this)}/>
+          <div className="content-left">
+            <ProductList products={this.state.products}/>
+          </div>
+          <div className="content-right">
+            <RecommendationSlider />
+            <HotTopicSlide />
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
-let activeIndex = 0
-
-function onCateChange(cate) {
-  console.log(cate)
-}
-
-React.render(
-  <div>
-    <div className="nav-bar">
-      <Menu menus={menus} activeIndex={activeIndex}/>
-      <div className="align-content">
-        <Avatar size={32} user={currentUser} />
-        <Search />
-      </div>
-    </div>
-
-    <div className="content">
-      <Sku/>
-      <CateBar categories={menus}
-        activeCateIndex={activeIndex}
-        onCateChange={onCateChange}/>
-      <div className="content-left">
-        <ProductList products={products}/>
-      </div>
-      <div className="content-right">
-        <RecommendationSlider />
-        <HotTopicSlide />
-      </div>
-    </div>
-  </div>,
-  document.getElementById("wrapper")
-)
+React.render(<Home/>, document.getElementById("wrapper"))
