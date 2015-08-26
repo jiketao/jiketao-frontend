@@ -8,6 +8,7 @@ import RecommendationSlider from "./components/recommendation-slider"
 import HotTopicSlide from "./components/hot-topic-slide"
 import Sku from "./components/sku"
 import CateBar from "./components/categories-bar"
+import Paginate from "./components/paginate"
 import Footer from "./components/footer"
 
 import productsMock from "../../test/fixtures/products"
@@ -94,6 +95,7 @@ class Home extends React.Component {
             onCateChange={this.onCateChange.bind(this)}/>
           <div className="content-left">
             <ProductList products={this.state.products}/>
+            <Paginate/>
           </div>
           <div className="content-right">
             <RecommendationSlider />

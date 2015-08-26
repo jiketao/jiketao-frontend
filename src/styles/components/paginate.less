@@ -1,0 +1,37 @@
+@import "../common/vars.less";
+@import "../common/mixins.less";
+
+div.paginate {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  height: 100%;
+  @unit-width: 100px;
+  width: 100%;
+  overflow: hidden;
+  height: 35px;
+  .hero();
+  div.paginate-align {
+    height: 100%;
+  }
+  div.page-unit {
+    &:hover {
+      cursor: pointer;
+      color: @primary-color;
+    }
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    height: 100%;
+    width: @unit-width;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+  }
+  div.previous-page {
+    border-right: 1px solid #ccc;
+  }
+  div.next-page {
+    border-left: 1px solid #ccc;
+  }
+}
