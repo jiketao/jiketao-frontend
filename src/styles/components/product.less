@@ -10,8 +10,8 @@ div.product {
 
   width: 100%;
   overflow: hidden;
-  height: @height;
-  padding: @padding 15px;
+  min-height: @height;
+  padding: @padding 10px;
   margin-bottom: @unit-gap;
 
   div.item-left {
@@ -25,8 +25,9 @@ div.product {
       }
     }
     p.item-content {
-      height: @height / 2;
+      //height: @height / 2;
       .content-color();
+      margin-bottom: 10px;
     }
     span.item-publish-date {
       margin-right: 10px;

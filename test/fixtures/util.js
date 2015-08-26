@@ -1,5 +1,5 @@
 function randomContent(times) {
-  times = times || Math.floor(2 + Math.random() * 20)
+  times = times || Math.floor(2 + Math.random() * 25)
   var str = randomWord()
   for(var i = 0; i < times; i++) {
     str = `${str} ${randomWord()}`

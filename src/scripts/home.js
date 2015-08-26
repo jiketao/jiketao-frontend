@@ -8,6 +8,7 @@ import RecommendationSlider from "./components/recommendation-slider"
 import HotTopicSlide from "./components/hot-topic-slide"
 import Sku from "./components/sku"
 import CateBar from "./components/categories-bar"
+import Footer from "./components/footer"
 
 import productsMock from "../../test/fixtures/products"
 
@@ -99,6 +100,7 @@ class Home extends React.Component {
             <HotTopicSlide />
           </div>
         </div>
+        <Footer/>
       </div>
     )
   }
