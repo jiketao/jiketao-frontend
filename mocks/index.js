@@ -7,7 +7,7 @@ function init(app) {
         list: products(20),
         totalCount: 100 + Math.floor(100 * Math.random())
       })
-    }, 400)
+    }, 500)
   })
 }
 

@@ -85,6 +85,7 @@ class Home extends React.Component {
     }
   }
   onCateChange(cate) {
+    if (this.state.isLoading) return
     this.setState({
       activeProductCategoryId: cate._id,
       currentPage: 1
@@ -96,7 +97,7 @@ class Home extends React.Component {
     }, this.load.bind(this))
   }
   load() {
-    if (this.setState.isLoading) return
+    if (this.state.isLoading) return
     this.moveToTop()
     this.setState({
       isLoading: true
