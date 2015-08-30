@@ -3,14 +3,18 @@ import React from "react"
 class Paginate extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {isShow: false}
+    this.pageCount = this.recount()
+  }
+  componentWillUpdate() {
+    this.pageCount = this.recount()
+  }
+  recount() {
     let totalCount = this.props.totalCount
     let pageCapacity = this.props.pageCapacity
     let pageCount = Math.floor(totalCount / pageCapacity)
     if(totalCount % pageCapacity !== 0) pageCount++
-    this.state = {
-      isShow: false,
-      pageCount: pageCount
-    };
+    return pageCount
   }
   show() {
     this.setState({isShow: true})
@@ -46,8 +50,7 @@ class Paginate extends React.Component {
   }
   pageItems() {
     let pages = []
-    let pageCount = this.state.pageCount
-    for(let i = pageCount; i != 0; i--) {
+    for(let i = this.pageCount; i != 0; i--) {
       let className = (i === this.props.currentPage)
         ? "active"
         : null
@@ -71,7 +74,7 @@ class Paginate extends React.Component {
     )
   }
   nextPage() {
-    if (this.props.currentPage === this.state.pageCount) {
+    if (this.props.currentPage === this.pageCount) {
       return
     }
     return (
@@ -82,6 +85,7 @@ class Paginate extends React.Component {
     )
   }
   render() {
+    this.recount()
     return (
       <div className="paginate">
         <div className="paginate-align">

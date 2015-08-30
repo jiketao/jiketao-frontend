@@ -1,7 +1,9 @@
-import qwest from "qwest"
+import request from "./request"
 
 function getProducts(params) {
-  return qwest.get("/products", params)
+  return request.get("/products", params)
+    .set('Accept', 'application/json')
+    .end()
 }
 
 export default {

@@ -6,11 +6,13 @@ var del = require("del")
 var browserify = require('gulp-browserify')
 var livereload = require('gulp-livereload')
 var connect = require('gulp-connect')
+var rest = require('connect-rest')
 var babelify = require("babelify")
 
 var uglify = require('gulp-uglify')
 var minifyHTML = require('gulp-minify-html')
 var uglifycss = require ('gulp-uglifycss')
+var mocks = require("./mocks")
 
 var src = {
   root: "src",
@@ -89,12 +91,30 @@ gulp.task("scripts", function() {
 })
 
 gulp.task("connect", function() {
-  connect.server({root: bin.root})
+  connect.server({
+    root: bin.root,
+    livereload: true,
+    middleware: function(connect, opt) {
+      return [rest.rester({
+        context: "/"
+      })]
+    }
+  })
+  mocks(rest)
 })
 
 gulp.task("test", function() {
-  // TODO
+  // TODO.
   console.log("should run test!..")
+})
+
+gulp.task("reload-server", function() {
+  // doesn't work to reload when mocks change
+  console.log("server reloading...")
+  console.log(mocks)
+  var mocks = require("./mocks")
+  mocks(rest)
+  connect.reload()
 })
 
 gulp.task("watch", function() {
@@ -103,6 +123,7 @@ gulp.task("watch", function() {
   gulp.watch("src/styles/**/*", ["styles"])
   gulp.watch("test/**/*", ["scripts", "test"])
   gulp.watch("src/scripts/**/*", ["scripts", "test"])
+  //gulp.watch("mocks/**/*", ["reload-server"])
 })
 
 /**

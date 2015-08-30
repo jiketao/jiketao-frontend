@@ -18,7 +18,7 @@
 ├── assets
 │   └── chair.jpg
 ├── bin
-│   ├── assets 
+│   ├── assets
 │   │   └── chair.jpg
 │   ├── index.html
 │   ├── scripts
@@ -69,9 +69,10 @@
 
 ## 编译开发
 
+* 安装全局依赖："npm install nodemon gulp-cli -g"
 * 安装依赖`npm install`。
 * 安装 [LiveReload](http://livereload.com/)浏览器插件。
-* 运行`gulp`。
+* 运行`nodemon`。
 * 打开浏览器`http://localhost:8080`，该链接指向`bin`根目录，可以访问改目录下的HTML文件。
 * 点击`LivoeReload`插件激活，然后修改`src`目录的源码，浏览器会自动刷新。
 

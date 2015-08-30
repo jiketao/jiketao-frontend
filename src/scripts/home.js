@@ -104,11 +104,14 @@ class Home extends React.Component {
       categoryId: this.state.activeProductCategoryId,
       pageNum: this.state.currentPage,
       pageCount: pageCapacity
-    }).then((data)=>{
+    }).then((res)=>{
+      var data = res.body
       this.setState({
         products: data.list,
-        totalCount: data.totalCount
+        totalProuctCount: data.totalCount,
+        isLoading: false
       })
+      console.log(this.state)
     }).catch((xhr, res, e)=>{
       modal.show(e)
       this.setState({isLoading: false})
