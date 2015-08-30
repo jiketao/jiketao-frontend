@@ -95,7 +95,7 @@ class Home extends React.Component {
             onCateChange={this.onCateChange.bind(this)}/>
           <div className="content-left">
             <ProductList products={this.state.products}/>
-            <Paginate/>
+            <Paginate totalCount={100} pageCapacity={10}/>
           </div>
           <div className="content-right">
             <RecommendationSlider />

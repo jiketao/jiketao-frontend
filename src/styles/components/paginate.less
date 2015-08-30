@@ -2,21 +2,25 @@
 @import "../common/mixins.less";
 
 div.paginate {
+  @unit-width: 100px;
+  @height: 35px;
   display: flex;
   justify-content: center; /* align horizontal */
-  height: 100%;
-  @unit-width: 100px;
   width: 100%;
-  overflow: hidden;
-  height: 35px;
+  height: @height;
   .hero();
   div.paginate-align {
     height: 100%;
   }
-  div.page-unit {
+  .hover {
     &:hover {
       cursor: pointer;
       color: @primary-color;
+    }
+  }
+  div.page-unit {
+    .page-item {
+      .hover();
     }
     display: flex;
     justify-content: center; /* align horizontal */
@@ -29,9 +33,37 @@ div.paginate {
     vertical-align: middle;
   }
   div.previous-page {
+    .hover();
     border-right: 1px solid #ccc;
   }
+  div.pages {
+    position: relative;
+    ul {
+      display: none;
+      &.active {
+        display: block;
+      }
+      box-shadow: 0px -1px 6px #ccc;
+      max-height: 300px;
+      overflow: scroll;
+      width: @unit-width + 2;
+      position: absolute;
+      bottom: 32px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      left: -1px;
+      li {
+        padding: 5px 0;
+        &:hover, &.active {
+          background-color: #f7f7f7;
+          cursor: pointer;
+        }
+      }
+    }
+  }
   div.next-page {
+    .hover();
     border-left: 1px solid #ccc;
   }
 }
