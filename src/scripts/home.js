@@ -77,6 +77,9 @@ class Home extends React.Component {
       activeProductCategoryId: cate._id
     })
   }
+  onPageChange(pageNum) {
+    console.log(pageNum)
+  }
   render() {
     return (
       <div>
@@ -95,7 +98,9 @@ class Home extends React.Component {
             onCateChange={this.onCateChange.bind(this)}/>
           <div className="content-left">
             <ProductList products={this.state.products}/>
-            <Paginate totalCount={100} pageCapacity={10}/>
+            <Paginate totalCount={100}
+              pageCapacity={10}
+              onPageChange={this.onPageChange.bind(this)}/>
           </div>
           <div className="content-right">
             <RecommendationSlider />

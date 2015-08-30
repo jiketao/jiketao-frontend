@@ -3,24 +3,24 @@ import React from "react"
 class Paginate extends React.Component {
   constructor(props) {
     super(props)
+    let totalCount = this.props.totalCount
+    let pageCapacity = this.props.pageCapacity
+    let pageCount = Math.floor(totalCount / pageCapacity)
+    if(totalCount % pageCapacity !== 0) pageCount++
     this.state = {
       currentPage: props.currentPage || 1,
-      isHover: false
+      isShow: false,
+      pageCount: pageCount
     };
   }
-  previousPage() {
-    return (
-      <div className="previous-page page-unit">上一页</div>
-    )
-  }
   show() {
-    this.setState({isHover: true})
+    this.setState({isShow: true})
   }
   hide() {
-    this.setState({isHover: false})
+    this.setState({isShow: false})
   }
   pages() {
-    var itemsClass = this.state.isHover ? "active": ""
+    var itemsClass = this.state.isShow ? "active": ""
     return (
       <div className="pages page-unit"
            onClick={this.show.bind(this)}
@@ -39,18 +39,15 @@ class Paginate extends React.Component {
     }
     this.setState({
       currentPage: pageNum,
-      isHover: false
+      isShow: false
     })
     if (typeof this.props.onPageChange === "function") {
       this.props.onPageChange(pageNum)
     }
   }
   pageItems() {
-    let totalCount = this.props.totalCount
-    let pageCapacity = this.props.pageCapacity
-    let pageCount = Math.floor(totalCount / pageCapacity)
-    if(totalCount % pageCapacity !== 0) pageCount++
     let pages = []
+    let pageCount = this.state.pageCount
     for(let i = pageCount; i != 0; i--) {
       let className = (i === this.state.currentPage)
         ? "active"
@@ -65,9 +62,24 @@ class Paginate extends React.Component {
     }
     return pages
   }
-  nextPage() {
+  previousPage() {
+    if (this.state.currentPage === 1) return
     return (
-      <div className="next-page page-unit">下一页</div>
+      <div className="previous-page page-unit"
+           onClick={this.selectPage.bind(this, this.state.currentPage - 1)}>
+           上一页
+      </div>
+    )
+  }
+  nextPage() {
+    if (this.state.currentPage === this.state.pageCount) {
+      return
+    }
+    return (
+      <div className="next-page page-unit"
+           onClick={this.selectPage.bind(this, this.state.currentPage + 1)}>
+           下一页
+      </div>
     )
   }
   render() {
