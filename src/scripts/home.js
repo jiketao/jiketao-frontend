@@ -97,6 +97,7 @@ class Home extends React.Component {
   }
   load() {
     if (this.setState.isLoading) return
+    this.moveToTop()
     this.setState({
       isLoading: true
     })
@@ -111,11 +112,14 @@ class Home extends React.Component {
         totalProuctCount: data.totalCount,
         isLoading: false
       })
-      console.log(this.state)
     }).catch((xhr, res, e)=>{
       modal.show(e)
       this.setState({isLoading: false})
     })
+  }
+  moveToTop() {
+    var cate = React.findDOMNode(this.refs.catebar)
+    window.scrollTo(0, cate.offsetTop)
   }
   render() {
     return (
@@ -131,7 +135,8 @@ class Home extends React.Component {
         <div className="content">
           <Sku/>
 
-          <CateBar categories={this.state.productCategories}
+          <CateBar ref="catebar"
+            categories={this.state.productCategories}
             activeCateId={this.state.activeProductCategoryId}
             onCateChange={this.onCateChange.bind(this)}/>
 
