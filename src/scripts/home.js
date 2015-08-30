@@ -69,16 +69,22 @@ class Home extends React.Component {
 
       postCategories,
       posts,
-      activePostCategoryId
+      activePostCategoryId,
+
+      currentPage: 1,
+      totalCount: 100
     }
   }
   onCateChange(cate) {
     this.setState({
-      activeProductCategoryId: cate._id
+      activeProductCategoryId: cate._id,
+      currentPage: 1
     })
   }
   onPageChange(pageNum) {
-    console.log(pageNum)
+    this.setState({
+      currentPage: pageNum
+    })
   }
   render() {
     return (
@@ -98,8 +104,9 @@ class Home extends React.Component {
             onCateChange={this.onCateChange.bind(this)}/>
           <div className="content-left">
             <ProductList products={this.state.products}/>
-            <Paginate totalCount={100}
+            <Paginate totalCount={this.state.totalCount}
               pageCapacity={10}
+              currentPage={this.state.currentPage}
               onPageChange={this.onPageChange.bind(this)}/>
           </div>
           <div className="content-right">

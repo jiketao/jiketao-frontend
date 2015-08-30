@@ -8,7 +8,6 @@ class Paginate extends React.Component {
     let pageCount = Math.floor(totalCount / pageCapacity)
     if(totalCount % pageCapacity !== 0) pageCount++
     this.state = {
-      currentPage: props.currentPage || 1,
       isShow: false,
       pageCount: pageCount
     };
@@ -28,13 +27,13 @@ class Paginate extends React.Component {
         <ul className={itemsClass}>
           {this.pageItems()}
         </ul>
-        <span className="page-item">第 {this.state.currentPage} 页</span>
+        <span className="page-item">第 {this.props.currentPage} 页</span>
       </div>
     )
   }
   selectPage(pageNum, event) {
     event.stopPropagation()
-    if (pageNum === this.state.currentPage) {
+    if (pageNum === this.props.currentPage) {
       return
     }
     this.setState({
@@ -49,7 +48,7 @@ class Paginate extends React.Component {
     let pages = []
     let pageCount = this.state.pageCount
     for(let i = pageCount; i != 0; i--) {
-      let className = (i === this.state.currentPage)
+      let className = (i === this.props.currentPage)
         ? "active"
         : null
       pages.push(
@@ -63,21 +62,21 @@ class Paginate extends React.Component {
     return pages
   }
   previousPage() {
-    if (this.state.currentPage === 1) return
+    if (this.props.currentPage === 1) return
     return (
       <div className="previous-page page-unit"
-           onClick={this.selectPage.bind(this, this.state.currentPage - 1)}>
+           onClick={this.selectPage.bind(this, this.props.currentPage - 1)}>
            上一页
       </div>
     )
   }
   nextPage() {
-    if (this.state.currentPage === this.state.pageCount) {
+    if (this.props.currentPage === this.state.pageCount) {
       return
     }
     return (
       <div className="next-page page-unit"
-           onClick={this.selectPage.bind(this, this.state.currentPage + 1)}>
+           onClick={this.selectPage.bind(this, this.props.currentPage + 1)}>
            下一页
       </div>
     )
