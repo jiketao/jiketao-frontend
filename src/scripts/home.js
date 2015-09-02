@@ -1,4 +1,4 @@
-import {log} from "./common/util"
+import {makeSkuMap} from "./common/util"
 import React from "react"
 import ProductList from "./components/product-list"
 import Menu from "./components/menu"
@@ -17,6 +17,9 @@ import productsMock from "../../test/fixtures/products"
 import productsAPI from "./apis/products"
 import modal from "./common/modal"
 
+/*
+ * 菜单栏数据
+ */
 let menus = window.menus || [
   {name: "首页", url: "/"},
   {name: "关于", url: "/about"},
@@ -56,11 +59,15 @@ let activePostCategoryId = window.activePostCategoryId || 0
 let posts = window.posts || []
 let totalPostCount = window.totalPostCount || 100
 
-// let currentUser = {
-//   name: "jery",
-//   avatar: "assets/jerry.gif"
-// }
-// <Avatar size={32} user={currentUser} />
+/*
+ * Sku数据，后台吐出
+ */
+ let skus = window.skus || [
+   {name: "home-sku1", url: "http://baidu.com", picture: "assets/watch.jpg"},
+   {name: "home-sku2", url: "http://weibo.com", picture: "assets/mac.png"},
+   {name: "home-sku3", url: "http://mp.weixin.qq.com", picture: "assets/arduino.jpg"},
+   {name: "home-sku4", url: "http://zhihu.com", picture: "assets/phone2.png"},
+ ]
 
 var pageCapacity = 10
 
@@ -120,7 +127,16 @@ class Home extends React.Component {
   }
   moveToTop() {
     var cate = React.findDOMNode(this.refs.catebar)
-    window.scrollTo(0, cate.offsetTop)
+    if (window.scrollY > cate.offsetTop) {
+      window.scrollTo(0, cate.offsetTop)
+    }
+  }
+  skus() {
+    if (!window.hideSkus) { // 可以通过后台隐藏skus
+      return (<Sku skus={skus}/>)
+    } else {
+      return ""
+    }
   }
   render() {
     return (
@@ -134,7 +150,7 @@ class Home extends React.Component {
         </div>
 
         <div className="content">
-          <Sku/>
+          {this.skus()}
 
           <CateBar ref="catebar"
             categories={this.state.productCategories}

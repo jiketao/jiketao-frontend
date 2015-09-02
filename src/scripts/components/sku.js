@@ -45,20 +45,28 @@ class Sku extends React.Component {
     let styles = this.getStyles(width, height, gap)
     return (
       <div className="sku" style={styles.overview}>
-        <div className="sku-left" style={styles.left}>
-          left
-        </div>
-        <div className="sku-right" style={styles.right}>
-          <div className="sku-right-up" style={styles.rightUp}>
-            right-up
+        <a href={this.props.skus[0].url} target="_blank">
+          <div className="sku-left" style={styles.left}>
+            <img src={this.props.skus[0].picture} className="pic"/>
           </div>
+        </a>
+        <div className="sku-right" style={styles.right}>
+          <a href={this.props.skus[1].url} target="_blank">
+            <div className="sku-right-up" style={styles.rightUp}>
+              <img src={this.props.skus[1].picture} className="pic"/>
+            </div>
+          </a>
           <div className="sku-right-bottom" style={styles.rightBottom}>
-            <div className="sku-right-bottom-left" style={styles.rightBottomLeft}>
-              right-bottom-left
-            </div>
-            <div className="sku-right-bottom-right" style={styles.rightBottomRight}>
-              right-bottom-right
-            </div>
+            <a href={this.props.skus[2].url} target="_blank">
+              <div className="sku-right-bottom-left" style={styles.rightBottomLeft}>
+                <img src={this.props.skus[2].picture} className="pic"/>
+              </div>
+            </a>
+            <a href={this.props.skus[3].url} target="_blank">
+              <div className="sku-right-bottom-right" style={styles.rightBottomRight}>
+                <img src={this.props.skus[3].picture} className="pic"/>
+              </div>
+            </a>
           </div>
         </div>
       </div>

@@ -1,5 +1,15 @@
 import React from "react"
 
+/**
+ * @usage:
+ *
+ * let currentUser = {
+ *    name: "jery",
+ *   avatar: "assets/jerry.gif"
+ * }
+ * <Avatar size={32} user={currentUser} />
+ */
+
 class Avatar extends React.Component {
   constructor() {
     super()

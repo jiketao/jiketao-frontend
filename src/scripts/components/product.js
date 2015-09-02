@@ -1,18 +1,19 @@
 import React from "react"
 
 class Product extends React.Component {
-  componnen
-
+  constructor(props) {
+    super(props)
+  }
   render() {
     return (
       <div className="product">
           <div className="item-right">
-            <img src={this.props.product.picUrl}/>
+            <img src={this.props.product.pictures[0]}/>
           </div>
 
           <div className="item-left">
             <h3 className="item-title">
-              <a href="/product-detail.html">
+              <a href={"/products/" + this.props.product._id}>
               {this.props.product.title}
               </a>
             </h3>

@@ -4,7 +4,7 @@ import {randomWord, randomContent} from "./util"
 let chair = {
   "_id": 0,
   "title": "Chair for fucking",
-  "picUrl": "assets/chair.jpg",
+  "pictures": ["assets/chair.jpg"],
   "content": {},
   "date": "2015-07-28"
 }
@@ -12,7 +12,7 @@ let chair = {
 let arduino = {
   "_id": 0,
   "title": "Arduino",
-  "picUrl": "assets/arduino.jpg",
+  "pictures": ["assets/arduino.jpg"],
   "content": {},
   "date": "2015-07-28"
 }
@@ -20,7 +20,7 @@ let arduino = {
 let dji = {
   "_id": 0,
   "title": "DJI",
-  "picUrl": "assets/dji.jpg",
+  "pictures": ["assets/dji.jpg"],
   "content": {},
   "date": "2015-07-28"
 }
@@ -28,7 +28,7 @@ let dji = {
 let pig = {
   "_id": 0,
   "title": "DJI",
-  "picUrl": "assets/pig.jpg",
+  "pictures": ["assets/pig.jpg"],
   "content": {},
   "date": "2015-07-28"
 }
