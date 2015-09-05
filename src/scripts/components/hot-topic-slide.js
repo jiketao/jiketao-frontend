@@ -1,5 +1,3 @@
-import React from "react"
-
 class HotTopicSlide extends React.Component {
   constructor() {
     super()

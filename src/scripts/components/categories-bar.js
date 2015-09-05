@@ -1,5 +1,3 @@
-import React from "react"
-
 class CateBar extends React.Component {
   constructor(props) {
     super(props)

@@ -1,5 +1,4 @@
 import {makeSkuMap} from "./common/util"
-import React from "react"
 import ProductList from "./components/product-list"
 import Menu from "./components/menu"
 import Search from "./components/search"

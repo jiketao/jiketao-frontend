@@ -1,4 +1,3 @@
-import React from "react"
 import Avatar from "./avatar"
 
 class Comment extends React.Component {

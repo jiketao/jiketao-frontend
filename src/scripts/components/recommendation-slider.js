@@ -1,5 +1,3 @@
-import React from "react"
-
 class RecommendationSlider extends React.Component {
   constructor() {
     super()

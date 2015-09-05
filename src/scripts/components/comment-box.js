@@ -1,4 +1,3 @@
-import React from "react"
 import Comment from "./comment"
 
 class CommentBox extends React.Component {

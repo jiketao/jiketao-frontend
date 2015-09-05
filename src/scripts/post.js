@@ -1,5 +1,4 @@
 import {log} from "./common/util"
-import React from "react"
 import Menu from "./components/menu"
 import Post from "./components/post"
 import CommentBox from "./components/comment-box"

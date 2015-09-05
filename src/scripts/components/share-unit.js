@@ -1,5 +1,3 @@
-import React from "react"
-
 class ShareUnit extends React.Component {
   constructor() {
     super()

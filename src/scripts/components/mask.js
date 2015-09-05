@@ -1,5 +1,3 @@
-import React from "react"
-
 class Mask extends React.Component {
   constructor(props) {
     super(props)

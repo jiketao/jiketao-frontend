@@ -68,7 +68,7 @@ gulp.task("copy", function() {
 gulp.task("html", function() {
   gulp.src(src.html)
     .pipe(gulp.dest(bin.html))
-    .pipe(livereload())
+    .on("end", reload)
 })
 
 gulp.task("styles", function() {
@@ -76,7 +76,7 @@ gulp.task("styles", function() {
     .pipe(less())
     .on("error", logError)
     .pipe(gulp.dest(bin.styles))
-    .pipe(livereload())
+    .on("end", reload)
 })
 
 gulp.task("scripts", function() {
@@ -87,7 +87,7 @@ gulp.task("scripts", function() {
     }))
     .on("error", logError)
     .pipe(gulp.dest(bin.scripts))
-    .pipe(livereload())
+    .on("end", reload)
 })
 
 gulp.task("connect", function() {
@@ -104,17 +104,7 @@ gulp.task("connect", function() {
 })
 
 gulp.task("test", function() {
-  // TODO.
   console.log("should run test!..")
-})
-
-gulp.task("reload-server", function() {
-  // doesn't work to reload when mocks change
-  console.log("server reloading...")
-  console.log(mocks)
-  var mocks = require("./mocks")
-  mocks(rest)
-  connect.reload()
 })
 
 gulp.task("watch", function() {
@@ -123,8 +113,11 @@ gulp.task("watch", function() {
   gulp.watch("src/styles/**/*", ["styles"])
   gulp.watch("test/**/*", ["scripts", "test"])
   gulp.watch("src/scripts/**/*", ["scripts", "test"])
-  //gulp.watch("mocks/**/*", ["reload-server"])
 })
+
+function reload() {
+  livereload.reload()
+}
 
 /**
  * Build for distribution.
