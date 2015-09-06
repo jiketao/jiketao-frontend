@@ -4,7 +4,14 @@ import {randomWord, randomContent} from "./util"
 let chair = {
   "_id": 0,
   "title": "Chair for fucking",
-  "pictures": ["assets/chair.jpg", "assets/arduino.jpg", "assets/dji.jpg", "assets/pig.jpg"],
+  "details": {
+    "pictures": ["assets/chair.jpg", "assets/arduino.jpg", "assets/dji.jpg", "assets/pig.jpg"],
+    price: 100,
+    priceRange: {
+      min: 40,
+      max: 500,
+    }
+  },
   "content": {},
   "date": "2015-07-28"
 }
@@ -12,7 +19,14 @@ let chair = {
 let arduino = {
   "_id": 0,
   "title": "Arduino",
-  "pictures": ["assets/arduino.jpg", "assets/chair.jpg", "assets/dji.jpg", "assets/pig.jpg"],
+  "details": {
+    "pictures": ["assets/arduino.jpg", "assets/chair.jpg", "assets/dji.jpg", "assets/pig.jpg"],
+    price: 100,
+    priceRange: {
+      min: 40,
+      max: 500,
+    }
+  },
   "content": {},
   "date": "2015-07-28"
 }
@@ -20,7 +34,14 @@ let arduino = {
 let dji = {
   "_id": 0,
   "title": "DJI",
-  "pictures": ["assets/dji.jpg", "assets/arduino.jpg", "assets/chair.jpg", "assets/pig.jpg"],
+  "details": {
+    "pictures": ["assets/dji.jpg", "assets/arduino.jpg", "assets/chair.jpg", "assets/pig.jpg"],
+    price: 100,
+    priceRange: {
+      min: 40,
+      max: 500,
+    }
+  },
   "content": {},
   "date": "2015-07-28"
 }
@@ -28,7 +49,14 @@ let dji = {
 let pig = {
   "_id": 0,
   "title": "DJI",
-  "pictures": ["assets/pig.jpg", "assets/arduino.jpg", "assets/chair.jpg", "assets/dji.jpg"],
+  "details": {
+    "pictures": ["assets/pig.jpg", "assets/arduino.jpg", "assets/chair.jpg", "assets/dji.jpg"],
+    price: 100,
+    priceRange: {
+      min: 40,
+      max: 500,
+    }
+  },
   "content": {},
   "date": "2015-07-28"
 }
@@ -45,7 +73,7 @@ export default function(count) {
     product._id = i
     product.content.brief = randomContent()
     product.title = randomWord()
-    product.upvote = Math.floor(Math.random() * 200000)
+    product.details.upvote = Math.floor(Math.random() * 200000)
     ret.push(product)
   }
   return ret

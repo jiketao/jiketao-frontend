@@ -6,7 +6,7 @@ class Product extends React.Component {
     return (
       <div className="product">
           <div className="item-right">
-            <img src={this.props.product.pictures[0]}/>
+            <img src={this.props.product.details.pictures[0]}/>
           </div>
 
           <div className="item-left">
@@ -23,7 +23,7 @@ class Product extends React.Component {
                 {this.props.product.date} 发布
               </span>| &nbsp;
               <span className="item-publish-upvote">
-                {this.props.product.upvote} 人觉得很赞
+                {this.props.product.details.upvote} 人觉得很赞
               </span>
             </div>
           </div>

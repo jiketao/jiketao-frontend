@@ -20,7 +20,8 @@ let menus = window.menus || [
 let activeMenuIndex = 0
 
 let product = products()[0]
-product.pictures.push("assets/arduino.jpg")
+product.details.pictures.push("assets/arduino.jpg")
+product.title = "程序员装逼神器－魁地奇飞天扫帚（光轮2001）哈利波特专属，淘宝爆款。" 
 
 
 class ProductDetail extends React.Component {
@@ -47,7 +48,7 @@ class ProductDetail extends React.Component {
             <ProductSummary product={product}/>
           </div>
           <div className="content-unit">
-            <Specifications specs={product.ext}/>
+            <Specifications specs={product.details.ext}/>
           </div>
           <div className="content-unit">
             <MarkdownContent content={product.content.extended}/>
