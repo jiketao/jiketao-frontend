@@ -1,0 +1,30 @@
+@import "../common/mixins.less";
+
+div.product-picture {
+  @show-size: 420px;
+  overflow: hidden;
+  width: @show-size;
+  img.show {
+    width: @show-size;
+    height: @show-size;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  li.item {
+    @item-size: 60px;
+    @margin: @show-size / 5 - 60px;
+    .hover();
+    width: @item-size;
+    height: @item-size;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    border: 3px solid transparent;
+    &.active {
+      border: 3px solid #333;
+    }
+  }
+}

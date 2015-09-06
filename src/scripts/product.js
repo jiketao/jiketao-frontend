@@ -20,6 +20,7 @@ let menus = window.menus || [
 let activeMenuIndex = 0
 
 let product = products()[0]
+product.pictures.push("assets/arduino.jpg")
 
 
 class ProductDetail extends React.Component {
@@ -42,11 +43,21 @@ class ProductDetail extends React.Component {
         </div>
 
         <div className="content">
-          <ProductSummary product={product}/>
-          <Specifications specs={product.ext}/>
-          <MarkdownContent content={product.content.extended}/>
-          <PostLinks posts={product.posts}/>
-          <Disqus/>
+          <div className="content-unit">
+            <ProductSummary product={product}/>
+          </div>
+          <div className="content-unit">
+            <Specifications specs={product.ext}/>
+          </div>
+          <div className="content-unit">
+            <MarkdownContent content={product.content.extended}/>
+          </div>
+          <div className="content-unit">
+            <PostLinks posts={product.posts}/>
+          </div>
+          <div className="content-unit">
+            <Disqus/>
+          </div>
         </div>
         <Footer/>
       </div>
