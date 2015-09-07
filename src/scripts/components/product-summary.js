@@ -28,19 +28,19 @@ class ProductSummary extends React.Component {
                   <i className="RMB"></i>{this.props.product.details.priceRange.max}
               </span>
             </section>
-            <section className="content-area">
-              <h4 className="name">简介</h4>
-              <p className="value money">
-                {this.props.product.content.brief}
-              </p>
-            </section>
-            <section>
+            <section className="tags">
               <span className="name">产品分类</span>
               <span className="value">
               {this.props.product.categories.map((tag)=> {
                 return <Tag tagName={tag.name} key={tag._id}/>
               })}
               </span>
+            </section>
+            <section className="content-area">
+              <h4 className="name">简介</h4>
+              <p className="value money">
+                {this.props.product.content.brief}
+              </p>
             </section>
           </div>
         </div>
