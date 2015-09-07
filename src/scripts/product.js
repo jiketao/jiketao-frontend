@@ -21,7 +21,14 @@ let activeMenuIndex = 0
 
 let product = products()[0]
 product.details.pictures.push("assets/arduino.jpg")
-product.title = "程序员装逼神器－魁地奇飞天扫帚（光轮2001）哈利波特专属，淘宝爆款。" 
+product.title = "程序员装逼神器－魁地奇飞天扫帚（光轮2001）哈利波特专属，淘宝爆款。"
+product.categories = [
+  {name: "家具", _id: 1},
+  {name: "交通工具", _id: 2},
+  {name: "家具", _id: 3},
+  {name: "家具", _id: 4},
+  {name: "交通工具", _id: 5}
+]
 
 
 class ProductDetail extends React.Component {
