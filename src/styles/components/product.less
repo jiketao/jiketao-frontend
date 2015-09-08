@@ -1,0 +1,46 @@
+@import "../common/mixins.less";
+@import "../common/vars.less";
+
+div.product {
+  .hero();
+  .border();
+
+  @height: 130px;
+  @padding: 10px;
+
+  width: 100%;
+  overflow: hidden;
+  min-height: @height;
+  padding: @padding 10px;
+  margin-bottom: @unit-gap;
+
+  div.item-left {
+    height: 100%;
+    float: left;
+    width: 75%;
+    h3.item-title {
+      margin-bottom: 5px;
+      &:hover {
+        color: #000;
+      }
+    }
+    p.item-content {
+      //height: @height / 2;
+      .content-color();
+      margin-bottom: 10px;
+    }
+    span.item-publish-date {
+      margin-right: 10px;
+    }
+  }
+  div.item-right {
+    height: @height - 2 * @padding;
+    width: @height;
+    float: left;
+    margin-right: 20px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

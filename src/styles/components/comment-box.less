@@ -1,0 +1,61 @@
+@import "../common/mixins.less";
+
+div.comment-box {
+  .hero();
+  .border();
+  padding: 15px;
+  width: 100%;
+  min-height: 100px;
+  div.comment-textarea {
+    overflow: hidden;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    textarea {
+      margin-bottom: 5px;
+      height: 36px;
+      &.focus {
+        height: 80px;
+      }
+    }
+    button.button {
+      float: right;
+    }
+  }
+  div.comment {
+    width: 100%;
+    padding: 15px 0px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+
+    div.comment-right {
+      width: 90%;
+      float: right;
+      div.comment-info {
+        span.comment-username {
+          margin-right: 8px;
+          font-weight: bold;
+        }
+        span.comment-date {
+          color: #A0A0A0;
+        }
+      }
+      p.comment-content {
+        padding: 6px 0;
+        .content-color();
+      }
+      div.comment-tools {
+        span.comment-tool-unit {
+          overflow: hidden;
+          margin-top: 5px;
+          font-size: 12px;
+          display: inline-block;
+          float: right;
+          .hover();
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}

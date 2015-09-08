@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "watch": ["mocks", "gulpfile.babel.js"],
+  "ignore": ["*.test.js", "fixtures/*"],
+  "exec": "gulp"
+}

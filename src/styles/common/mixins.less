@@ -1,0 +1,55 @@
+@import "./vars.less";
+
+.hero() {
+  background-color: #fff;
+}
+
+.border() {
+  //border: 1px solid #ccc;
+}
+
+.border-bottom() {
+  border-bottom: 1px solid #ccc;
+}
+
+.border-top() {
+  border-top: 1px solid #ccc;
+}
+
+.content-padding() {
+  padding: 10px 15px;
+}
+
+.animation(@type: all; @duration: .15s; @ease: ease;) {
+  transition: @type @duration @ease;
+  -webkit-transition: @type @duration @ease;
+  -moz-transition: @type @duration @ease;
+  -ms-transition: @type @duration @ease;
+  -o-transition: @type @duration @ease;
+}
+
+.button() {
+  padding: 8px 16px;
+  text-align: center;
+  border-radius: 3px;
+  border: none;
+  background-color: @primary-color;
+  color: #fff;
+  outline: none;
+  font-size: 14px;
+  &:hover {
+    background-color: @primary-color-deep;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: @primary-color-deeper;
+  }
+}
+
+.hover() {
+  cursor: pointer;
+}
+
+.content-color() {
+  //color: #000;
+}

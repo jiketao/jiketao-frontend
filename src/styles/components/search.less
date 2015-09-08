@@ -1,0 +1,42 @@
+@import "../common/vars.less";
+
+div.search {
+  @height: @search-height;
+  @width: 250px;
+  @border-color: #e1e8ed;
+  position: relative;
+  float: right;
+  display: block;
+  margin-top: (@menus-height - @height) / 2;
+  width: @width;
+  input {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: @height;
+    padding: 5px 27px 6px 12px;
+    font-size: 12px;
+    line-height: @height;
+    color: #292f33;
+    background-color: #f5f8fa;
+    border: 1px solid @border-color;
+    border-radius: 21px;
+    transition: all .2s ease-in-out;
+    outline: none;
+    &:focus {
+      background-color: #fff;
+    }
+  }
+  span.search-icon {
+    .hover();
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    height: @height;
+    width: @height;
+    line-height: @height;
+    padding-right: 3px;
+    color: #9E9898;
+    border-left: 1px solid @border-color;
+  }
+}

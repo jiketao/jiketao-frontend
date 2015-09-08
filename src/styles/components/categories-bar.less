@@ -1,0 +1,30 @@
+@import "../common/vars.less";
+@import "../common/mixins.less";
+
+div.categories-bar {
+  .hero();
+  .border();
+  @height: 40px;
+  height: @height;
+  margin-bottom: @unit-gap * 2;
+  background-color: rgb(244, 244, 244);
+  ul {
+    height: @height;
+    li.category-item {
+      //.animation();
+      &:hover {
+        .hover();
+        background-color: rgba(204, 204, 204, 0.3);
+      }
+      &.active {
+        background: @primary-color;
+        color: #fff;
+      }
+      line-height: @height;
+      width: 50px;
+      float: left;
+      height: @height;
+      text-align: center;
+    }
+  }
+}

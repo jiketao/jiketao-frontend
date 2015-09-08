@@ -1,0 +1,108 @@
+@import "./mixins.less";
+@import "./vars.less";
+
+.content() {
+  width: 80%;
+  max-width: 960px;
+}
+
+div.nav-bar {
+  .hero();
+  .border-bottom();
+}
+
+ul li {
+  list-style: none;
+}
+
+ul.menus {
+  //width: 100%;
+  float: left;
+  overflow: hidden;
+  background: #fff;
+  height: @menus-height;
+  li.menu-item {
+    line-height: @menus-height;
+    width: 60px;
+    float: left;
+    text-align: center;
+    color: #000;
+    @bgc: rgba(204, 204, 204, 0.3);
+    a {
+      .animation();
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      //color: blue;
+      &.active {
+        background-color: @bgc;
+      }
+      &:hover {
+        background-color: @bgc;
+      }
+    }
+  }
+  li.logo {
+    float: left;
+    width: 150px;
+    //padding: 5px 15px;
+    background-color: @primary-color;
+    color: #fff;
+    height: 100%;
+    text-align: center;
+    line-height: @menus-height;
+    //margin-right: 5px;
+    a {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .border-bottom();
+}
+
+div.nav-bar {
+  position: relative;
+  height: @menus-height;
+  margin-bottom: 10px;
+  div.align-content {
+    height: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    .content();
+    //height: 100%;
+    img.avatar {
+      float: right;
+      margin-top: (@menus-height - @search-height) / 2;
+      margin-left: 15px;
+    }
+  }
+}
+
+//============== Posts content =============
+
+@min-height: 700px;
+div.content {
+  .content();
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+div.content-left {
+  //.hero();
+  //.border();
+  position: relative;
+  width: 69%;
+  min-height: @min-height;
+  float: left;
+}
+
+div.content-right {
+  //.border();
+  width: 30%;
+  min-height: @min-height;
+  float: right;
+}
