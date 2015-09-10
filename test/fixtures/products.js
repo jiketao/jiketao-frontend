@@ -1,5 +1,9 @@
-import _ from "lodash"
+import extend from "object-assign"
 import {randomWord, randomContent} from "./util"
+
+var fs = require("fs")
+
+var html = fs.readFileSync(__dirname + "/markdown-result.html", "utf-8")
 
 let chair = {
   "_id": 0,
@@ -68,12 +72,13 @@ export default function(count) {
   count = count || Math.random() * 20
   for(let i = 0, len = count; i < len; i++) {
     let index = parseInt(cadidates.length * Math.random())
-    let product = _.extend({}, cadidates[index])
+    let product = extend({}, cadidates[index])
     product.title = `${product.title}_${i}`
     product._id = i
     product.content.brief = randomContent()
     product.title = randomWord()
     product.details.upvote = Math.floor(Math.random() * 200000)
+    product.content.extended = html
     product.details.ext = {
       "闭合方式":	"套脚",
       "风格":	"百搭,时尚休",

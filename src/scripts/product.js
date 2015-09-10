@@ -58,7 +58,10 @@ class ProductDetail extends React.Component {
             <Specifications specs={product.details.ext}/>
           </div>
           <div className="content-unit">
-            <MarkdownContent content={product.content.extended}/>
+            <div className="product-detail">
+              <h4>图文详情</h4>
+              <MarkdownContent content={product.content.extended}/>
+            </div>
           </div>
           <div className="content-unit">
             <PostLinks posts={product.posts}/>

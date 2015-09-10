@@ -13,9 +13,17 @@
 @import "./components/footer.less";
 @import "./components/tag.less";
 @import "./components/specifications.less";
+@import "./components/markdown-content.less";
 
 div.content-unit {
   .hero();
   margin-bottom: @unit-gap;
   min-height: 100px;
+}
+
+div.product-detail {
+  .content-padding();
+  h4 {
+    .h4();
+  }
 }
