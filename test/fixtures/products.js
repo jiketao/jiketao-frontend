@@ -74,6 +74,23 @@ export default function(count) {
     product.content.brief = randomContent()
     product.title = randomWord()
     product.details.upvote = Math.floor(Math.random() * 200000)
+    product.details.ext = {
+      "闭合方式":	"套脚",
+      "风格":	"百搭,时尚休",
+      "季节":	"春季",
+      "款式":	"单",
+      "流行元素":	"纯色,金属装饰",
+      "皮质特征":	"磨砂",
+      "色系":	"棕色",
+      "适用场合":	"日常携带,约会,日常休",
+      "销售季":	"15年春季",
+      "鞋底材质":	"橡胶",
+      "鞋跟形状":	"平跟",
+      "头":	"圆",
+      "性别":	"男子",
+      "制作工艺":	"胶贴皮鞋 "
+    }
+
     ret.push(product)
   }
   return ret

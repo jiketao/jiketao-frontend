@@ -4,7 +4,21 @@ class Specifications extends React.Component {
   }
   render() {
     return (
-      <div>Specifications</div>
+      <div className="specifications">
+        <h4>产品参数</h4>
+        {Object.keys(this.props.specs).map((key) => {
+          return (
+            <section>
+              <span className="name">
+                {key}
+              </span>
+              <span className="value">
+                {this.props.specs[key]}
+              </span>
+            </section>
+          )
+        })}
+      </div>
     )
   }
 }
