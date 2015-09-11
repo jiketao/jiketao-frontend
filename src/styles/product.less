@@ -21,9 +21,20 @@ div.content-unit {
   min-height: 100px;
 }
 
-div.product-detail {
+div.product-detail, div.relative-posts {
   .content-padding();
   h4 {
     .h4();
+  }
+}
+
+div.relative-posts {
+  ul li {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 4px;
+    a:hover {
+      text-decoration: underline;
+    }
   }
 }

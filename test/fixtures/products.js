@@ -95,6 +95,12 @@ export default function(count) {
       "性别":	"男子",
       "制作工艺":	"胶贴皮鞋 "
     }
+    product.posts = [
+      {_id: 0, title: "习近平主持政治局会议 通过繁荣文艺意见"},
+      {_id: 1, title: "中越边境雷区四伏:有村庄平均每户少一条腿"},
+      {_id: 0, title: "天津爆炸8名失联者被确认无生还可能"},
+      {_id: 1, title: "央视回应节目中盗播网友作品:编辑网购付费购得"}
+    ]
 
     ret.push(product)
   }

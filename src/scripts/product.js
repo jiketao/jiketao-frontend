@@ -64,7 +64,18 @@ class ProductDetail extends React.Component {
             </div>
           </div>
           <div className="content-unit">
-            <PostLinks posts={product.posts}/>
+            <div className="relative-posts">
+              <h4>相关文章</h4>
+              <ul className="posts-list">
+              {product.posts.map(function(post) {
+                return (
+                  <li className="post-item">
+                    <a href={"/posts/" + post._id}>{post.title}</a>
+                  </li>
+                )
+              })}
+              </ul>
+            </div>
           </div>
           <div className="content-unit">
             <Disqus/>
