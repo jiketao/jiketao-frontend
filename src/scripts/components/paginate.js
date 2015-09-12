@@ -25,6 +25,7 @@ class Paginate extends React.Component {
     return (
       <div className="pages page-unit"
            onClick={this.show.bind(this)}
+           onTouchStart={this.show.bind(this)}
            onMouseLeave={this.hide.bind(this)}>
         <ul className={itemsClass}>
           {this.pageItems()}
@@ -55,6 +56,7 @@ class Paginate extends React.Component {
       pages.push(
         <li className={className}
             key={i}
+            onTouchEnd={this.selectPage.bind(this, i)}
             onClick={this.selectPage.bind(this, i)}>
           <span className="page-item">第 {i} 页</span>
         </li>
@@ -66,6 +68,7 @@ class Paginate extends React.Component {
     if (this.props.currentPage === 1) return
     return (
       <div className="previous-page page-unit"
+           onTouchStart={this.selectPage.bind(this, this.props.currentPage - 1)}
            onClick={this.selectPage.bind(this, this.props.currentPage - 1)}>
            上一页
       </div>
@@ -77,7 +80,8 @@ class Paginate extends React.Component {
     }
     return (
       <div className="next-page page-unit"
-           onClick={this.selectPage.bind(this, this.props.currentPage + 1)}>
+           onClick={this.selectPage.bind(this, this.props.currentPage + 1)}
+           onTouchStart={this.selectPage.bind(this, this.props.currentPage + 1)}>
            下一页
       </div>
     )

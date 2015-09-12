@@ -11,6 +11,8 @@ div.categories-bar {
   ul {
     height: @height;
     li.category-item {
+      background-color: rgb(244, 244, 244);
+      margin-bottom: 10px;
       //.animation();
       &:hover {
         .hover();
@@ -25,6 +27,17 @@ div.categories-bar {
       float: left;
       height: @height;
       text-align: center;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  div.categories-bar {
+    ul {
+      li.category-item {
+        width: 40px;
+        font-size: 13px;
+      }
     }
   }
 }
