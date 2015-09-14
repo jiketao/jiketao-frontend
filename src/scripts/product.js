@@ -58,10 +58,24 @@ class ProductDetail extends React.Component {
             <Specifications specs={product.details.ext}/>
           </div>
           <div className="content-unit">
-            <MarkdownContent content={product.content.extended}/>
+            <div className="product-detail">
+              <h4>图文详情</h4>
+              <MarkdownContent content={product.content.extended}/>
+            </div>
           </div>
           <div className="content-unit">
-            <PostLinks posts={product.posts}/>
+            <div className="relative-posts">
+              <h4>相关文章</h4>
+              <ul className="posts-list">
+              {product.posts.map(function(post) {
+                return (
+                  <li className="post-item">
+                    <a href={"/posts/" + post._id}>{post.title}</a>
+                  </li>
+                )
+              })}
+              </ul>
+            </div>
           </div>
           <div className="content-unit">
             <Disqus/>

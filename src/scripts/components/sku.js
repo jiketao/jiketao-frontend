@@ -1,10 +1,30 @@
 class Sku extends React.Component {
   constructor(props) {
     super(props)
+    this.onResize()
+  }
+  onResize() {
+    let timer = null
+    window.addEventListener("resize", () => {
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        this.forceUpdate()
+      }, 200)
+    }, false)
   }
   getStyles(width, height, gap) {
+    // 这个组件吃了shi了，我都不知道怎么算的
+    var width = document.body.offsetWidth
+    // 响应式Sku
+    width = (width * 0.96 > 960)
+      ? 960
+      : (width * 0.96)
+    height = width * 0.4167
     var borders = 1 * 2
     var innerWidth = width / 2
+    if (width < 400) {
+      gap = 2
+    }
     return {
       overview: {
         "width": `${width}px`,
@@ -31,7 +51,11 @@ class Sku extends React.Component {
         "marginRight": `${gap}px`
       },
       rightBottomRight: {
-        "width": `${(innerWidth - gap) / 2 - borders}px`
+        "width": (() => {
+          return gap === 2
+            ? `${(innerWidth - gap) / 2}px`
+            : `${(innerWidth - gap) / 2 - borders}px`
+        })()
         //"marginRight": `${marginRight}px`
       }
     }
@@ -42,7 +66,7 @@ class Sku extends React.Component {
     let gap = 5
     let styles = this.getStyles(width, height, gap)
     return (
-      <div className="sku" style={styles.overview}>
+      <div className="sku" style={styles.overview} ref="wrapper">
         <a href={this.props.skus[0].url} target="_blank">
           <div className="sku-left" style={styles.left}>
             <img src={this.props.skus[0].picture} className="pic"/>

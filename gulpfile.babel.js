@@ -83,7 +83,7 @@ gulp.task("scripts", function() {
   gulp.src(src.scripts, {})
     .pipe(browserify({
       debug: true,
-      transform: ["babelify"]
+      transform: ["babelify", "brfs"]
     }))
     .on("error", logError)
     .pipe(gulp.dest(bin.scripts))

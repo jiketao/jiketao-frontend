@@ -1,0 +1,23 @@
+@import "../common/vars.less";
+@import "../common/mixins.less";
+
+div.specifications {
+  .content-padding();
+  overflow: hidden;
+  h4 {
+    .h4();
+  }
+  section {
+    width: 30%;
+    float: left;
+    min-width: 140px;
+    margin-right: 2%;
+    margin-bottom: 5px;
+    span.name {
+      display: inline-block;
+      &::after {
+        content: "：";
+      }
+    }
+  }
+}

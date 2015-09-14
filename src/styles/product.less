@@ -12,9 +12,30 @@
 @import "./components/hot-topic-slide.less";
 @import "./components/footer.less";
 @import "./components/tag.less";
+@import "./components/specifications.less";
+@import "./components/markdown-content.less";
+@import "./components/disqus.less";
 
 div.content-unit {
   .hero();
   margin-bottom: @unit-gap;
   min-height: 100px;
+}
+
+div.product-detail, div.relative-posts {
+  .content-padding();
+  h4 {
+    .h4();
+  }
+}
+
+div.relative-posts {
+  ul li {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 4px;
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 }

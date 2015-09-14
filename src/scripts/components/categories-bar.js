@@ -15,7 +15,8 @@ class CateBar extends React.Component {
       return (
         <li className={className}
             key={item._id}
-            onClick={this.onActivate.bind(this, i, item)}>
+            onClick={this.onActivate.bind(this, i, item)}
+            onTouchStart={this.onActivate.bind(this, i, item)}>
             {item.name}
         </li>
       )
