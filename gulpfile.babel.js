@@ -146,7 +146,7 @@ gulp.task("build", function() {
   gulp.src(src.scripts)
     .pipe(browserify({
       debug: true,
-      transform: ["babelify"]
+      transform: ["babelify", "brfs"]
     }))
     .pipe(uglify())
     .pipe(gulp.dest(dist.scripts))
