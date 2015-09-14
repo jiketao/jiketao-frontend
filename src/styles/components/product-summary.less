@@ -4,13 +4,14 @@ div.product-summary {
   .content-padding();
   overflow: hidden;
   div.product-picture-align {
+    width: 45%;
     float: left;
+    margin-right: 2%;
   }
   div.product-profile {
-    width: 470px;
+    width: 53%;
     float: left;
     //outline: 1px solid yellow;
-    margin-left: 30px;
     h3 {
       font-size: 20px;
       margin-bottom: 30px;
@@ -54,5 +55,15 @@ div.product-summary {
     span.name::after {
       content: "：";
     }
+  }
+}
+
+@media (max-width: 600px) {
+  div.product-summary div.product-picture-align {
+    width: 100%;
+  }
+  div.product-summary div.product-profile {
+    margin-top: 15px;
+    width: 100%;
   }
 }
