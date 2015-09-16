@@ -8,7 +8,6 @@ class ProductSummary extends React.Component {
     resize(this.forceUpdate.bind(this))
   }
   getStyles() {
-    console.log('fuck');
   }
   render() {
     this.getStyles()
