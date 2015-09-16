@@ -1,12 +1,17 @@
 import ProductPicture from "./product-picture"
 import Tag from "./tag"
+import {resize} from "../common/util"
 
 class ProductSummary extends React.Component {
   constructor(props) {
     super(props)
-    console.log(props)
+    resize(this.forceUpdate.bind(this))
+  }
+  getStyles() {
+    console.log('fuck');
   }
   render() {
+    this.getStyles()
     return (
       <div className="product-summary">
         <div className="summary-left">

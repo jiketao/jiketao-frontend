@@ -9,3 +9,18 @@ export function makeSkuMap(skus) {
   })
   return map
 }
+
+let fns = []
+let timer = null
+window.addEventListener("resize", () => {
+  clearTimeout(timer)
+  timer = setTimeout(() => {
+    fns.forEach(function(fn) {
+      fn()
+    })
+  }, 200)
+}, false)
+
+export function resize(fn) {
+  fns.push(fn)
+}

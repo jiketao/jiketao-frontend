@@ -1,16 +1,12 @@
+import {resize} from "../common/util"
+
 class Sku extends React.Component {
   constructor(props) {
     super(props)
     this.onResize()
   }
   onResize() {
-    let timer = null
-    window.addEventListener("resize", () => {
-      clearTimeout(timer)
-      timer = setTimeout(() => {
-        this.forceUpdate()
-      }, 200)
-    }, false)
+    resize(this.forceUpdate.bind(this))
   }
   getStyles(width, height, gap) {
     // 这个组件吃了shi了，我都不知道怎么算的
