@@ -1,5 +1,6 @@
 import {log} from "./common/util"
 import Menu from "./components/menu"
+import Footer from "./components/footer"
 
 let survey = window.survey || {
   title: "这是一个关于啪啪的调查问卷",
@@ -45,26 +46,27 @@ class Survey {
           <Menu menus={[]} activeIndex={0}/>
         </div>
         <div className="content">
-        <h1>{survey.title}</h1>
-        <ul className="surveys">
-        {rows.map((row) => {
-          return (
-            <li className="survey-item">
-              {row.map((value, i) => {
-                if (!value) return;
-                let key = header[i]
-                return (
-                  <div className="key-value">
-                    <span className="survey-key">{key}</span>：
-                    <span>{value}</span>
-                  </div>
-                )
-              })}
-            </li>
-          )
-        })}
-        </ul>
+          <h1>{survey.title}</h1>
+          <ul className="surveys">
+          {rows.map((row) => {
+            return (
+              <li className="survey-item">
+                {row.map((value, i) => {
+                  if (!value) return;
+                  let key = header[i]
+                  return (
+                    <div className="key-value">
+                      <span className="survey-key">{key}</span>：
+                      <span>{value}</span>
+                    </div>
+                  )
+                })}
+              </li>
+            )
+          })}
+          </ul>
         </div>
+        <Footer/>
       </div>
     )
   }
