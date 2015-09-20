@@ -31,6 +31,7 @@ class Survey {
   constructor() {
   }
   componentDidMount() {
+    document.querySelector("title").innerHTML = survey.title + " | 极客淘"
     new Masonry(document.querySelector("ul.surveys"), {
       // set itemSelector so .grid-sizer is not used in layout
       itemSelector: '.survey-item',
