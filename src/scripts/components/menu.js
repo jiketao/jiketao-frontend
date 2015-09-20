@@ -2,10 +2,9 @@ class Menu extends React.Component {
   constructor(props) {
     super(props)
   }
-  render() {
-    return (
-      <div className="menus-wrapper">
-        <h1><a href="/">极客淘</a></h1>
+  getItems() {
+    if (this.props.menus.length !== 0) {
+      return (
         <ul className="menus">
         {this.props.menus.map((item, index)=> {
           return (
@@ -18,6 +17,15 @@ class Menu extends React.Component {
           )
         })
         }</ul>
+      )
+    } else {
+      return (<span/>)
+    }
+  }
+  render() {
+    return (
+      <div className="menus-wrapper">
+        <h1><a href="/">极客淘</a></h1>
       </div>
     )
   }
