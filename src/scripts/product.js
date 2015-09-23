@@ -10,7 +10,7 @@ import MarkdownContent from "./components/markdown-content"
 import PostLinks from "./components/post-links"
 import Disqus from "./components/disqus"
 
-import products from "../../test/fixtures/products"
+// import products from "../../test/fixtures/products"
 
 let menus = window.menus || [
   {name: "首页", url: "/"},
@@ -19,7 +19,7 @@ let menus = window.menus || [
 ]
 let activeMenuIndex = 0
 
-let product = window.product || products()[0]
+let product = window.product //|| products()[0]
 
 // product.details.pictures.push("assets/arduino.jpg")
 // product.title = "程序员装逼神器－魁地奇飞天扫帚（光轮2001）哈利波特专属，淘宝爆款。"
@@ -30,7 +30,7 @@ let product = window.product || products()[0]
 //   {name: "家具", _id: 4},
 //   {name: "交通工具", _id: 5}
 // ]
-
+document.querySelector("title").innerHTML = product.title + "|极客淘"
 
 class ProductDetail extends React.Component {
   constructor(props) {
@@ -38,6 +38,28 @@ class ProductDetail extends React.Component {
     this.state = {
       menus,
       activeMenuIndex
+    }
+  }
+  getPosts() {
+    if (product.posts.length) {
+      return (
+        <div className="content-unit">
+          <div className="relative-posts">
+            <h4>相关文章</h4>
+            <ul className="posts-list">
+            {product.posts.map(function(post) {
+              return (
+                <li className="post-item">
+                  <a href={"/posts/" + post._id}>{post.title}</a>
+                </li>
+              )
+            })}
+            </ul>
+          </div>
+        </div>
+      );
+    } else {
+      return ""
     }
   }
   render() {
@@ -64,20 +86,7 @@ class ProductDetail extends React.Component {
               <MarkdownContent content={product.content.extended}/>
             </div>
           </div>
-          <div className="content-unit">
-            <div className="relative-posts">
-              <h4>相关文章</h4>
-              <ul className="posts-list">
-              {product.posts.map(function(post) {
-                return (
-                  <li className="post-item">
-                    <a href={"/posts/" + post._id}>{post.title}</a>
-                  </li>
-                )
-              })}
-              </ul>
-            </div>
-          </div>
+          {this.getPosts()}
           <div className="content-unit">
             <Disqus/>
           </div>
