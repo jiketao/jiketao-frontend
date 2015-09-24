@@ -49,14 +49,18 @@ ul.menus {
 }
 
 div.menus-wrapper {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 960px;
   h1 {
     float: left;
-    width: 150px;
+    display: inline-block;
+    // width: 150px;
     //padding: 5px 15px;
-    background-color: @primary-color;
+    // background-color: @primary-color;
     color: #fff;
     height: 100%;
-    text-align: center;
+    text-align: left;
     line-height: @menus-height;
     //margin-right: 5px;
     a {
@@ -68,6 +72,7 @@ div.menus-wrapper {
 }
 
 div.nav-bar {
+  background-color: @primary-color;
   position: relative;
   height: @menus-height;
   margin-bottom: 10px;
@@ -170,7 +175,8 @@ div.content {
 }
 
 @media (max-width: 1200px) {
-  div.content {
+  div.content,
+  div.menus-wrapper {
     width: 96%;
   }
 }
