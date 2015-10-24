@@ -1,57 +1,33 @@
 import {log} from "./common/util"
 import Menu from "./components/menu"
 import Post from "./components/post"
-import CommentBox from "./components/comment-box"
-import RecommendationSlider from "./components/recommendation-slider"
-import HotTopicSlide from "./components/hot-topic-slide"
 import Search from "./components/search"
-import Avatar from "./components/avatar"
+import MarkdownContent from "./components/markdown-content"
 import _ from "lodash"
+import Disqus from "./components/disqus"
 
-// To delete
-import productsMock from "../../test/fixtures/products"
-import menus from "../../test/fixtures/menus.json"
-import comments from "../../test/fixtures/comments.json"
-
-mock()
+document.querySelector("title").innerHTML = post.title + "|极客淘"
 
 let activeIndex = -1
-let product = productsMock(20)[0]
-
-function mock() {
-  let i = 0
-  let comment = comments[0]
-  while(i++ < 20) {
-    let newComment = _.extend({}, comment)
-    newComment._id = i
-    newComment.content = newComment.content.repeat(i)
-    comments.push(newComment)
-  }
-}
-
-let currentUser = {
-  _id: 43123,
-  name: "jery",
-  avatar: "assets/jerry.gif"
-}
+let menus = []
 
 React.render(
   <div>
     <div className="nav-bar">
       <Menu menus={menus} activeIndex={activeIndex}/>
       <div className="align-content">
-        <Avatar size={32} user={currentUser} />
         <Search />
       </div>
     </div>
     <div className="content">
-      <div className="content-left">
-        <Post product={product}/>
-        <CommentBox comments={comments}/>
+      <div className="content-unit">
+        <div className="product-detail">
+          <h1 className="heading">{post.title}</h1>
+          <MarkdownContent content={post.content.extended}/>
+        </div>
       </div>
-      <div className="content-right">
-        <RecommendationSlider />
-        <HotTopicSlide />
+      <div className="content-unit">
+        <Disqus/>
       </div>
     </div>
   </div>,
