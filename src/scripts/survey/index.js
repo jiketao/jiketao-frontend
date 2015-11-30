@@ -1,3 +1,6 @@
+/*==========================
+ + 调查问卷
+ *==========================*/
 import {log} from "./common/util"
 import Menu from "./components/menu"
 import Footer from "./components/footer"

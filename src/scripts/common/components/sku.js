@@ -1,4 +1,4 @@
-import {resize} from "../common/util"
+import {resize} from "../util"
 
 class Sku extends React.Component {
   constructor(props) {

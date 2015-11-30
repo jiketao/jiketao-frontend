@@ -23,9 +23,9 @@ class Menu extends React.Component {
     }
   }
   render() {
+    <h1><a href="/">极客淘</a></h1>
     return (
       <div className="menus-wrapper">
-        <h1><a href="/">极客淘</a></h1>
       </div>
     )
   }
