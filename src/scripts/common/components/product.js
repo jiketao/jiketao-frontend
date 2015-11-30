@@ -3,27 +3,29 @@ class Product extends React.Component {
     super(props)
   }
   render() {
+    var product = this.props.product;
+    product.details.pictures = product.details.picUrl.split('\n') || [];
     return (
       <div className="product">
           <div className="item-right">
-            <img src={this.props.product.details.pictures[0]}/>
+            <img src={product.details.pictures[0]}/>
           </div>
 
           <div className="item-left">
             <h3 className="item-title">
-              <a href={"/products/" + this.props.product._id}>
-              {this.props.product.title}
+              <a href={"/products/" + product._id}>
+              {product.title}
               </a>
             </h3>
             <p className="item-content">
-              {this.props.product.content.brief}...
+              {product.content.brief}...
             </p>
             <div className="item-info">
               <span className="item-publish-date">
-                {this.props.product.date} 发布
+                {product.date} 发布
               </span>| &nbsp;
               <span className="item-publish-upvote">
-                {this.props.product.details.upvote} 人觉得很赞
+                {product.details.upvote} 人觉得很赞
               </span>
             </div>
           </div>

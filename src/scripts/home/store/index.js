@@ -45,7 +45,21 @@ export default Fluxxor.createStore({
             productCategories,
             skus
         };
-        this.bindActions(constants.ADD_TODO, this.onAddTodo);
+
+        this.bindActions('loadPageData', this.onLoadPageData);
+    },
+    /**
+     * [onLoadPageData 加载页面数据]
+     * @param  {[Object]} data [description]
+     * @return {[type]}      [description]
+     */
+    onLoadPageData: function(data) {
+
+        for (var attr in data) {
+            this.data[attr] = data[attr];
+        }
+
+        this.emit('change');
     },
     onAddTodo: function(payload) {
         var id = this._nextTodoId();

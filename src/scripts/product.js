@@ -1,14 +1,14 @@
 import {log} from "./common/util"
-import Menu from "./components/menu"
-import Search from "./components/search"
-import RecommendationSlider from "./components/recommendation-slider"
-import HotTopicSlide from "./components/hot-topic-slide"
-import Footer from "./components/footer"
-import ProductSummary from "./components/product-summary"
-import Specifications from "./components/specifications"
-import MarkdownContent from "./components/markdown-content"
-import PostLinks from "./components/post-links"
-import Disqus from "./components/disqus"
+import Menu from "./common/components/menu"
+import Search from "./common/components/search"
+import RecommendationSlider from "./common/components/recommendation-slider"
+import HotTopicSlide from "./common/components/hot-topic-slide"
+import Footer from "./common/components/footer"
+import ProductSummary from "./product/components/product-summary"
+import Specifications from "./product/components/specifications"
+import MarkdownContent from "./common/components/markdown-content"
+import PostLinks from "./common/components/post-links"
+import Disqus from "./common/components/disqus"
 
 // import products from "../../test/fixtures/products"
 
@@ -17,6 +17,7 @@ let menus = window.menus || [
   {name: "关于", url: "/about"},
   {name: "...", url: "/"}
 ]
+
 let activeMenuIndex = 0
 
 let product = window.product //|| products()[0]

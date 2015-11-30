@@ -1,6 +1,6 @@
-import ProductPicture from "./product-picture"
-import Tag from "./tag"
-import {resize} from "../common/util"
+import ProductPicture from "../../common/components/product-picture"
+import Tag from "../../common/components/tag"
+import {resize} from "../../common/util"
 
 class ProductSummary extends React.Component {
   constructor(props) {

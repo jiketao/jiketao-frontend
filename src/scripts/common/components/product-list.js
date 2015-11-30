@@ -6,6 +6,9 @@ class ProductList extends React.Component {
   }
   render() {
     let listProcut = ()=> {
+      if (!this.props.products) {
+        return '';
+      }
       return (
         this.props.products.map((product)=>{
           return (

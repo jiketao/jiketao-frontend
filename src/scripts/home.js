@@ -27,7 +27,6 @@ var FluxMixin = Fluxxor.FluxMixin(React),
 /**
  * App Component
  */
-// <ProductList products={data.products}/>
 var App = React.createClass({
     mixins: [FluxMixin, StoreWatchMixin("AppStore")],
     getStateFromFlux() {
@@ -36,11 +35,13 @@ var App = React.createClass({
     },
     componentDidMount() {
         console.log(this.state)
+        this.load();
     },
     load() {
+        var flux = this.getFlux()
+        flux.actions.initalizeAppData();
     },
     render() {
-        console.log(this.state);
         var data = this.state.data;
         return (
             <div> 
@@ -55,9 +56,9 @@ var App = React.createClass({
                     <CateBar ref="catebar"
                         categories={data.productCategories}
                         activeCateId={data.activeProductCategoryId}/>
-
                     <div className="content-left">
-                        <Mask isShow={true}/>
+                        <ProductList products={data.products}/>
+                        <Mask isShow={false}/>
                         <Paginate totalCount={1000}
                           pageCapacity={10}
                           currentPage={1} />
@@ -73,4 +74,7 @@ var App = React.createClass({
     }
 });
 
+flux.on("dispatch", function(type, payload) {
+    console.log("[Dispatch]", type, payload);
+});
 React.render( <App flux = {flux}/>,  document.getElementById('wrapper'));
