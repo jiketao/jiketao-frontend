@@ -1,17 +1,24 @@
 @import "./mixins.less";
+@brand-primary: #3ea5ff;
+@font-subtle-color: #999;
 
 * {
   margin: 0;
   padding: 0;
 	box-sizing: border-box;
 	font-family: "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: @brand-primary;
+  &:hover {
+    color: darken(@brand-primary, 3%);
+  }
 }
 
 body {

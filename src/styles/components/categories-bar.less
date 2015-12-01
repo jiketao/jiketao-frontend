@@ -5,14 +5,24 @@ div.categories-bar {
   .hero();
   .border();
   @height: 40px;
-  height: @height;
   margin-bottom: @unit-gap * 2;
   background-color: rgb(244, 244, 244);
+  position: relative;
+  .more {
+    float: right;
+    cursor: pointer;
+    padding: 10px;
+    display: inline-block;
+  }
   ul {
-    height: @height;
+    background-color: rgb(244, 244, 244);
     li.category-item {
-      background-color: rgb(244, 244, 244);
-      margin-bottom: 10px;
+      display: inline-block;
+      line-height: @height;
+      width: auto;
+      padding: 0 10px;
+      height: @height;
+      text-align: center;
       //.animation();
       &:hover {
         .hover();
@@ -22,20 +32,15 @@ div.categories-bar {
         background: @primary-color;
         color: #fff;
       }
-      line-height: @height;
-      width: 50px;
-      float: left;
-      height: @height;
-      text-align: center;
     }
   }
+
 }
 
 @media (max-width: 400px) {
   div.categories-bar {
     ul {
       li.category-item {
-        width: 40px;
         font-size: 13px;
       }
     }
