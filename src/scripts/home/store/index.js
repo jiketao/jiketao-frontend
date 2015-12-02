@@ -1,14 +1,8 @@
 /*==========================
 (+) 首页应用store 
  *==========================*/
-var Fluxxor = require('Fluxxor');
-var Fluxxor = require('fluxxor');
+import Fluxxor from "fluxxor"
 
-var constants = {
-    ADD_TODO: "ADD_TODO",
-    TOGGLE_TODO: "TOGGLE_TODO",
-    CLEAR_TODOS: "CLEAR_TODOS"
-};
 /*
  * 菜单栏数据
  */
@@ -18,15 +12,7 @@ let menus = window.menus || [
   {name: "...", url: "/"}
 ]
 
-let productCategories = window.productCategories || [
-  {name: "所有", _id: 0},
-  {name: "电脑", _id: 1},
-  {name: "键盘", _id: 2 },
-  {name: "办公椅", _id: 3},
-  {name: "软件", _id: 4},
-  {name: "背包", _id: 5},
-  {name: "鸡鸡", _id: 6}
-]
+let productCategories = []
 
 /*
  * Sku数据，后台吐出
@@ -40,10 +26,15 @@ let productCategories = window.productCategories || [
 
 export default Fluxxor.createStore({
     initialize: function() {
+
         this.data = {
             menus,
             productCategories,
-            skus
+            skus,
+            paginate: {
+              totalCount: 100000,
+              currentPage: 1,
+            }
         };
 
         this.bindActions('loadPageData', this.onLoadPageData);

@@ -59,9 +59,7 @@ var App = React.createClass({
                     <div className="content-left">
                         <ProductList products={data.products}/>
                         <Mask isShow={false}/>
-                        <Paginate totalCount={1000}
-                          pageCapacity={10}
-                          currentPage={1} />
+                        <Paginate data={data.paginate}/>
                     </div>
 
                     <div className="content-right">
