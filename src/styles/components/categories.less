@@ -1,0 +1,53 @@
+/**
+ * 分类目录
+ */
+.product-categories {
+  .category {
+    ul{
+      margin: 0;
+      padding: 0;
+    }
+    .category-nav {
+      padding: 4px 0;
+      margin-bottom: 10px;
+      border-bottom: solid 1px whitesmoke;
+      li {
+        position: relative;
+        display: inline-block;
+        padding-right: 15px;
+        &::after {
+          content: '>';
+          position: absolute;
+          right: 0;
+          top: 2px;
+          color: #333;
+        }
+        a {
+          font-weight: bold;
+          color: #333;
+          font-size: 15px;
+        }
+      }
+    }
+    .category-recommend {
+      margin-bottom: 10px;
+      li {
+        display: inline-block;
+        margin-right: 5px;
+        border: solid 1px whitesmoke;
+        padding: 6px 15px;
+      }
+    }
+    .category-items {
+      li.category-item {
+        display: inline-block;
+        margin: 10px 10px 10px 0;
+        a {
+          font-size: 12px;
+          color: #666;
+        }
+      }
+    }
+  }
+}
+

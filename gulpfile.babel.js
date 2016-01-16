@@ -59,6 +59,8 @@ gulp.task("clean", function() {
 })
 
 gulp.task("copy", function() {
+  gulp.src(["bower_components/**/*"])
+    .pipe(gulp.dest(bin.root + "/lib"))
   gulp.src(["lib/**/*"])
     .pipe(gulp.dest(bin.root + "/lib"))
   gulp.src(["assets/**/*"])
